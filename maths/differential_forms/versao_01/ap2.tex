@@ -1,0 +1,67 @@
+\section{Derivadas}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas Parciais}
+
+Seja uma função $f:U\to\mathbb{R}$, definida em $U\subset\mathbb{R}^n$, onde $U$ é um aberto. Definimos que existe a derivada da função $f$ no ponto $a \in U$ tal que:
+%
+%
+\[ 
+\frac{\partial f}{\partial x_i}(a) = \lim_{t\to 0}\frac{f(a + t e_i) 
+- f(a)}{t}
+\]
+%
+%
+Onde $e = \{e_i\}_{i=1}^{n}$ é a base canônica do $\mathbb{R}^n$, e como $U$ é um aberto, isso significa que para $t$ suficientemente pequeno ainda tem-se que $a + te_i \in U$. O termo do lado esquerdo da igualdade é a derivada parcial da função $f$, no ponto $a$, em relação a i-ésima variável, onde $a\in\mathbb{R}^n$ é tal que $a = (a_i)_{i=1}^{n} = (a_1,\ldots,a_n)$. Essa derivada parcial também pode ser representada na seguinte notação $\partial_{i}f(a)$. Nos casos particulares, em que $U \subset \mathbb{R}^2$ e $U \subset \mathbb{R}^3$ a notação $x = (x_i)_{i=1}^{n} = (x_1,\ldots,x_n)$ 
+se confunde com $(x,y)$ e $(x,y,z)$.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Interpretação Geométrica}
+
+
+Como $U\subset\mathbb{R}^n$ é um aberto, é possível encontrar um $\delta > 0$ tal que $a+te_i \in U$, então está definido o caminho retilíneo $\lambda:(-\delta,\delta) \to \mathbb{R}$, tal que $\lambda(t) = a + te_i$, notando que $\lambda(0) = a$, e $\lambda$ é paralelo ao eixo $e_i$. A derivada parcial da definição nada mais é do que a derivada da função $f \circ \lambda:(\delta,\delta)\to\mathbb{R}$, no ponto $t=0$ ou seja:
+%
+\[
+\frac{\partial f}{\partial x_i}(a) = (f \circ \lambda)'(0) 
+\]
+%
+%
+Ou seja, quando calculamos a derivada da função $f$, no ponto $a$, restrito a esse segmento de reta, estamos na verdade calculando a variação da função no ponto, naquela direção. Para ilustra esse importante conceito geométrico, tomemos $f:U\subset\mathbb{R}^2\to\mathbb{R}$, podemos definir as retas 
+$\ell_i$ tal que:
+%
+%
+\[
+\ell_i = f(a) + \frac{\partial f}{\partial x_i}(a)t e_i
+\]
+%
+%
+Essas retas são tangentes ao gráfico da função $f$, $z = f(x_1,x_2)$ no ponto $(a_1,a_2,f(a_1,a_2))$. Note que a derivada parcial $\partial_i f(a)$ é o coeficiente angular da reta tangente a esse ponto. O conceito de vetores tangentes à uma superfície é muito importante em física, e mais a frente definiremos esse conceito e como usar cálculo diferencial e integral em maiores dimensões.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas Direcionais}
+
+Vimos anteriormente que as derivadas parciais nos fornecem as inclinações do plano tangente à superfície no ponto $a$, porém essas derivadas são tomadas em função da direção dos eixos do plano, mas podemos estender essas derivadas para direções arbitrárias, que nos leva a definir as derivadas direcionais. Seja um aberto $U\subset\mathbb{R}^n$, e uma função $f:U\to\mathbb{R}$, então a derivada direcional da função $f$ no ponto $a$, segundo o vetor $v$ é por definição, o limite:
+%
+\[
+\frac{\partial f}{\partial v}(a) = \lim_{t\to 0} \frac{f(a+tv) - f(a)}{t} 
+\]
+%
+A derivada parcial na direção $v$ existe quando existir o limite acima. Repare que se tomarmos o caso particular $v = e_i$, retomamos o resultado da derivada parcial. De uma forma mais precisa, a derivada direcional de $f$ no ponto $a$ nada mais é do que a derivada no ponto $t=0$ da função composta $f\circ (\beta)(t): (-\epsilon,\epsilon)\to \mathbb{R}^n$, onde $\beta: (-\epsilon,\epsilon)\to\mathbb{R}^n$ é o caminho retilíneo $\beta(t) = a + tv$, notando que $\beta(0) = a$ e $\beta'(t) = v$ é o vetor velocidade.
+
+\vspace{0.2cm}\noindent\textbf{Exemplo} 
+\\ 
+Seja a função $\frac{xy}{x^2 + y^2}$ para pontos fora da origem e $f(0,0) = 0$. Já vimos que esta função possui derivadas parciais iguais a zero em todos os pontos do plano, agora iremos mostrar que a função não possui derivada direcional na origem, de fato tomemos $v = (a,b)$, $a \neq 0, b \neq 0$ e aplicando a definição:
+%
+\[
+\frac{\partial f}{\partial v}(0,0) = \lim_{t \to 0} \frac{f(at,bt) 
+- f(0,0)}{t} = \frac{ab}{a^2+b^2}\lim_{t\to 0}\frac{1}{t} \to \infty
+\]
+%
+O limite acima não existe, o que demonstra que a função não possui derivada direcional na origem.
+
+
+

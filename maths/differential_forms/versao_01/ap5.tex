@@ -1,0 +1,244 @@
+\section{Exercícios propostos}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas}
+
+\begin{enumerate}
+	\item Seja $h(r,\theta) = f(r\cos\theta,r\sin\theta)$, encontre as derivadas parciais $\frac{\partial h}{\partial r}$ e $\frac{\partial h}{\partial \theta}$, e com esse resultado demonstre:
+	%
+	\[ 
+	\left(\begin{array}{c} 
+   \partial_{r}h \\ \partial_{\theta}h
+   \end{array}\right) = 
+   \left(\begin{array}{cc} 
+     \cos\theta  &  \sin\theta \\ 
+   -r \sin\theta & r\cos\theta \\
+   \end{array}\right)
+   \left(\begin{array}{c} 
+   \partial_{x}f \\ \partial_{y}f
+   \end{array}\right)
+  \]
+  Demonstra também que vale a seguinte relação entre as derivadas 
+  parciais de $h$:
+  \[
+  \left(\frac{\partial h}{\partial r}\right)^2 + \frac{1}{r^2}
+  \left(\frac{\partial h}{\partial\theta}\right)^2 
+  = \left(\frac{\partial f}{\partial x}\right)^2 
+  + \left(\frac{\partial f}{\partial y}\right)^2
+  \]
+  %
+  \item Seja $u = f(x-y,y-x)$, então mostre que vale a seguinte relação:
+  \[
+  \frac{\partial u}{\partial x} + \frac{\partial u}{\partial y} = 0
+  \]
+  %
+  \item Seja $u = x^3f(y/x,z/x)$, então mostre ser válida a seguinte relação:
+  \[
+  x \frac{\partial u}{\partial x} 
+  + y\frac{\partial u}{\partial y} 
+  + z\frac{\partial u}{\partial z} = 3u
+  \]
+  %
+  \item Seja $x = u(r,s,t)$ e $y = v(r,s,t)$ e seja $z = f(x,y)$, encontre as fórmulas para as derivadas parciais da função $z$, ou seja, calcule:
+  \[
+  \frac{\partial z}{\partial r} 
+  \ \ , \ \ 
+  \frac{\partial z}{\partial s} 
+  \ \ , \ \ 
+  \frac{\partial z}{\partial t}
+  \]
+  %
+  %
+  \item Seja $v = (x,y,z)$ e $r = \sqrt{x^{2} + y^{2} + z^{2}}$, 
+  seja $f(v) = g(r)$, então demonstre que vale a seguinte relação:
+  %
+  \[
+  \left(\frac{\partial g}{\partial r}\right)^2 
+  = \left(\frac{\partial f}{\partial x}\right)^2 
+  + \left(\frac{\partial f }{\partial y}\right)^2 
+  + \left(\frac{\partial f}{\partial z}\right)^2
+  \]
+  %
+  %
+  \item Seja $g(x,y) = f(x+y,x-y)$, onde $f(u,v)$ é uma função 
+  diferenciável de duas variáveis, demonstre ser válida a seguinte 
+  relação entre as derivadas parciais de $f$ e $g$:
+  %
+  \[
+  \left(\frac{\partial g}{\partial x}\right) 
+  \left(\frac{\partial g}{\partial y}\right) 
+  = \left(\frac{\partial f}{\partial u}\right)^2 
+  - \left(\frac{\partial f}{\partial v}\right)^2 
+  \]
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Gradiente}
+ 
+Seja $g = g(r)$, onde $r = \sqrt{x^2+y^2+z^2}$, e seja $f(x,y,z) = g(r)$, então encontre o gradiente da função $f$ $(\nabla f)$ dadas as seguintes funções  $g(r)$ abaixo: 
+%
+\begin{multicols}{2}
+\begin{enumerate}
+	\item $g(r) = \frac{1}{r}$
+	\item $g(r) = \frac{1}{r^3}$
+	\item $g(r) = \ell n\left(\frac{1}{r} \right)$
+	\item $g(r) = r^2 $
+	\item $g(r) = e^{-r^2}$
+	\item $g(r) = \frac{4}{r^n}$  
+\end{enumerate}
+\end{multicols}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Diferenciabilidade}
+
+\begin{enumerate}
+	\item Seja $f$ uma função diferenciável de duas variáveis, e supondo que para $k \geq 1$, tivermos que $f(tx,ty) = t^kf(x,y)$, para todos os números $t,x,y \in \mathbb{R}$, demonstre a Relação de Euler (válida para $k = 1$):
+	%
+	\[x\frac{\partial f}{\partial x} + y\frac{\partial f}{\partial y} =  f(x,y)\]
+	%
+	%
+	\item Generalize a Relação de Euler para o $\mathbb{R}^n$, sendo $x = (x_i)_{i=1}^{n}\in\mathbb{R}^n$, e nas mesmas condições do problema anterior $f(tx) = t^kf(x)$, então vale a seguinte relação (tomando $k = 1$):
+	%
+	\[x_1\frac{\partial f}{\partial x_1} + \ldots + x_n\frac{\partial f}
+	{\partial x_n} =  f(x)\]
+	%
+	Essa relação também pode ser escrita como $\langle \nabla f, x \rangle = f(x)$, para k = 1, onde $\nabla f$ é o gradiente da função $f:X\to\mathbb{R}$, onde $X\subset\mathbb{R}^n$.
+	%
+	\item Verifique a regra da cadeia para a seguinte função $f(v_1,v_2,v_3) = v_1^2v_2+v_3v_2^2$ onde $v_1(x_1,x_2) = x_1x_2$, $v_2(x_1,x_2) = \sin(x_1)$, $v_3(x_1,x_2) = e^{x_1}$, utilizando a notação clássica:
+	%
+	\[
+	\frac{\partial f}{\partial x_i} = \sum_{j}\frac{\partial f}{\partial v_j}
+	\frac{\partial v_j}{\partial x_i}
+	\]
+	%
+	 Reflita sobre a notação clássica estar comprometida demais com um sistema de coordenadas, pois se interpreta $v_i(x_1,x_2)$ como função de $x_1$ e $x_2$, ou seja sem motivação intrínseca, e compare com a notação moderna, utilizando o conceito Bourbaki de funções, tratando como aplicações que 
+	 levam elementos de um conjunto a outro, ou seja a seguinte função $f = f(f_1,f_2,f_3):U\to\mathbb{R}$, onde $U\subset\mathbb{R}^3$ é um aberto e que cada $f_k:U\to\mathbb{R}$ é uma função diferenciável, seja $g:V\to
+	 \mathbb{R}$ uma função diferenciável, onde $V\subset\mathbb{R}^2$ é um aberto, de forma que $f(U) \subset V$ então a composta $g\circ f:U\to \mathbb{R}$.
+	%
+	\item Sejam as funções $f:\mathbb{R}\to\mathbb{R}$ e $F:\mathbb{R}^2\to \mathbb{R}$ respeitando a seguinte relação $F(x,y) = f(xy)$, demonstre através da regra da cadeia que vale a relação:
+	%
+	\[
+	x \frac{\partial F}{\partial x} = y \frac{\partial F}{\partial y}
+	\]
+	%
+	%
+	\item Sejam as funções diferenciáveis $f:\mathbb{R}\to\mathbb{R}$ e $F:\mathbb{R}^2\to\mathbb{R}$ e satisfazendo a relação $F(x,f(x)) = 0$ demonstre a relação entre as derivadas parciais de $F$ e a derivada $f'(x)$:
+	\[
+	y = f(x) \rightarrow f'(x) = - \left(\frac{\partial F}{\partial x}\right) 
+	\left(\frac{\partial F}{\partial y}\right)^{-1} \ \ , \ \
+	\frac{\partial F}{\partial y} \neq 0
+	\] 
+\end{enumerate}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Linearidade}
+
+Seja a função $f:U\to\R$, onde $U\subset \R^2$, definida da seguinte maneira.
+%
+%
+\[
+  f_{\alpha\beta} =
+  \begin{cases}
+    \frac{x^\alpha y\beta}{x^2+y^2} ,& \text{se $(x,y) \neq (0,0)$}\\
+    0                               ,& \text{se $(x,y) = (0,0)$}
+  \end{cases}
+\]
+%
+%
+Iremos analisar a diferenciabilidade e continuidade dessa função e suas derivadas para diversos valores de $\alpha$ e $\beta$.
+%
+%
+%
+\begin{enumerate}
+  \item Verifique se a função é homogênea, e qual seu grau, ou seja se é válida a relação $f(tx) = t^kf(x)$. 
+	\item Para $\alpha = 2$ e $\beta = 1$, mostre que para todo caminho $\gamma:(-\epsilon,\epsilon) \to \R$, com $\gamma(0) = 0$, existe a derivada de $(f\circ\gamma)(t)$ na origem $(t=0)$. Mostre que existem as derivadas direcionais em todo plano $\R^2$, porém não existe a dependência linear na direção, ou seja não são satisfeitas as relações:
+	\[ 
+	\frac{\partial f}{\partial (v+\omega)}(a) = \frac{\partial f}
+	{\partial v}(a) + \frac{\partial f}{\partial \omega}(a)
+	\ \ \ , \ \ \
+	\frac{\partial f}{\partial(t v)}(a) = t \frac{\partial f}
+	{\partial v}(a)
+	\]
+	%
+	%
+	Esse exercício demonstra que a existência das derivadas direcionais não implica na dependência linear da direção, ou seja não é possível descrever a derivada parcial como $\langle \nabla f, v \rangle$. Ou seja a função $f$ não é diferenciável.
+	\item Para $\alpha = 1$ e $\beta = 1$, mostre que as derivadas direcionais só existem nas direções dos eixos da base do $\R^2$, e que são nulas. Mostre que em outras direções não existe a derivada (use a definição e mostre que não existe o limite). Mostre que a função não é contínua na origem, para isso tome dois caminhos diferentes, e mostre que o limite 
+	não é o mesmo (sugestão: $\lambda(t) = (0,t)$ e $\xi(t) = (t,t)$. Esse exercício demonstra que a existência das derivadas parciais não implica em continuidade.
+	\item Para $\alpha = \beta = 2$ mostre que a função $f$ é diferenciável 
+	na origem. Demonstre a existência de suas derivadas direcionais, e as relações para dependência linear da direção, se for o caso.
+	\item Mostre que para $\alpha = 1$ e $\beta = 0$ a função $f$ é diferenciável na origem. Verifique se a função é diferenciável testando se ela é linear (obedece a dependência linear da direção)
+	\item Mostre que para $\alpha = 4$ e $\beta = 0$ a função $f$ é diferenciável na origem. Verifique se a função é diferenciável testando se ela é linear (obedece a dependência linear da direção)
+	\item Mostre que para $\alpha = 3$ e $\beta = 0$ a função $f$ não é diferenciável	na origem. Conclua isso utilizando as condições de dependência linear da direção.
+	\item Analise a função $f_{\alpha\beta}$ e dê o diagnóstico de sua diferenciabilidade, analise para quais valores de $\alpha$ e $\beta$ existem suas derivadas direcionais, e para que a função seja diferenciável na origem, contínua na origem. Faça o diagnóstico completo, baseando-se nos exercícios anteriores.
+\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Equações Diferenciais}
+
+\begin{enumerate}
+	\item Seja um campo vetorial $(a,b) = v\in \mathbb{R}^2$, 
+	e seja $g = g(bx - ay)$, uma função diferenciável em 
+	$\mathbb{R}$, sendo $f:U\to\mathbb{R}$, onde 
+	$U\subset\mathbb{R}^2$ é um aberto, demonstre que 
+	$f(x,y) = g(bx - ay)$ satisfaz a seguinte equação 
+	diferencial parcial:
+	%
+	\[
+	\langle \nabla f , v \rangle 
+	= a\frac{\partial f}{\partial x} 
+	+ b\frac{\partial f}{\partial y} = 0
+	\]
+	%
+	%
+	\item Seja $u(x,y) = f(xy)$, demonstre que a função 
+	$u(x,y)$ satisfaz a seguinte equação diferencial parcial:
+	%
+	\[
+	x \frac{\partial u}{\partial x} 
+	- y \frac{\partial u}{\partial y} 
+	= 0
+	\]
+	%
+	\item Seja $u(x,y) = f(x/y)$, demonstre que a função 
+	$u(x,y)$ satisfaz a seguinte equação diferencial parcial:
+	%
+	\[
+	x \frac{\partial u}{\partial x} 
+	+ y \frac{\partial u}{\partial y} = 0
+	\]
+	%
+	\item Supondo que $g(u,v)$ satisfaça a equação diferencial abaixo:
+	%
+	\[
+	\frac{\partial^2 g}{\partial u \partial v} (u,v) = 0
+	\]
+	%
+	Demonstre que $g(u,v) = \varphi_1{u} + \varphi_2(v)$, onde 
+	$\varphi_1(u)$ é função apenas de $u$ e $\varphi_2(v)$ 
+	é função apenas de $v$.
+	 %
+	 \item Mostre que a função $z = f(x^2+y^2)$ satisfaz a 
+	 equação diferencial parcial abaixo:
+	 %
+	 \[
+	 y \frac{\partial f}{\partial x} 
+	 - x \frac{\partial f}{\partial y} = 0
+	 \]
+	 %
+	 \item Mostre que a função $z = y f(x^2-y^2)$ satisfaz a 
+	 equação diferencial parcial:
+	 %
+	 \[
+	 \frac{1}{x}\frac{\partial z}{\partial x} 
+	 + \frac{1}{y}\frac{\partial z}{\partial y} 
+	 = \frac{z}{y^2}
+	 \]
+\end{enumerate}

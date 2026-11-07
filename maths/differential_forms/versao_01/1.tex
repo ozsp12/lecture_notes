@@ -1,0 +1,333 @@
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+\section{Formas Diferenciais Básicas}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definição: 0-forma básica}
+
+\hspace{0.5cm}
+Nesse capítulo apresentaremos as formas diferenciais, utilizando o 
+$\mathbb{R}^3$ como palco, com o objetivo de motivar o leitor, e 
+apresentar as virtudes de aprender álgebra exterior, multilinear e 
+ter um conceito bem solidificado sobre diferenciais e suas aplicações.
+
+Vamos começar com a definição de  0-forma básica é uma função a 
+valores reais, que pertence ao espaço vetorial das funções 
+k-vezes diferenciáveis $C^{k}(\mathbb{R})$, definimos de forma 
+usual a soma de dois vetores pertencentes a este 
+espaço, e o produto de um escalar, pertencente aos reais, 
+por um vetor desse espaço.
+
+\begin{enumerate}
+	\item Para $f,g\in C^{k}(\mathbb{R})$ e $a,b \in \mathbb{R}$ 
+	então $(af + bg)\in C^{k}(\mathbb{R})$.
+	\item É definido o produto de duas funções $f,g \in C^{k}(\mathbb{R})$ temos que $(fg)\in C^{k}(\mathbb{R})$
+\end{enumerate}
+
+Assim a 0-forma básica é simplesmente uma função
+%
+\begin{equation}
+\omega = f(x_1, x_2, x_3)    
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definição: 1-forma básica} 
+
+\hspace{0.5cm}
+Uma 1-forma básica é uma combinação linear de funções 
+%
+\begin{equation}
+a_i: X \subset \mathbb{R}^3 \to \mathbb{R},
+\end{equation}
+
+onde $X$ é um aberto em $\mathbb{R}^3$. Vale observar que as funções são diferenciáveis, ou seja, 
+%
+\begin{equation}
+a_i = a_i(x_1,x_2,x_3) \in C^{k}(\mathbb{R}),    
+\end{equation}
+
+porém como estamos trabalhando no espaço Euclidiano $\mathbb{R}^3$, é necessário e suficiente que $a_i \in C^{1}(\mathbb{R})$. A 1-forma básica possui uma expressão geral do tipo
+%
+\begin{equation}
+\varphi = \sum_{i = 1}^{3}a_i dx_i 
+= a_1  dx_1 + a_2  dx_2 + a_3  dx_3.
+\end{equation}
+
+\noindent\textbf{Corolário:} 
+É imediato o resultado de que $dx_1, dx_2, dx_3$ também são 1-formas, de fato basta notar que para $a_1 = 1, a_2 = 0, a_3 = 0$ então $\varphi = dx_1$, os outros resultados são concluídos de forma análoga. 
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definição: 2-forma básica}
+
+\hspace{0.5cm}
+Uma 2-forma básica é a combinação linear entre funções do tipo
+%
+\begin{equation}
+a_{ij}: X \subset \mathbb{R}^3 \to \mathbb{R}    
+\end{equation}
+
+onde $X$ é um aberto, e 2-forma básica possui uma expressão geral em função de  $dx_i \wedge dx_j$, do tipo
+%
+\begin{align}
+\nonumber 
+\omega &= \sum_{i,j = 1}^{3} a_{ij} \; dx_i \wedge dx_j 
+\\
+&= a_{23} dx_2 \wedge dx_3 + a_{31} dx_3 \wedge dx_1 
++ a_{12} dx_1 \wedge dx_2.
+\end{align}
+
+\noindent\textbf{Corolário:} 
+É imediato o resultado de que $dx_i \wedge dx_j$ também são 2-formas, de fato basta tomar por exemplo $a_{23} = 1$ e as outras funções como sendo nulas e obtemos que $\omega = dx_2 \wedge dx_3$, e os outros resultados também são concluídos de maneira análoga.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Definição: 3-forma básica} 
+
+\hspace{0.5cm}
+Uma 3-forma básica é tal que $a:X\subset \mathbb{R}^3 \to \mathbb{R}$, onde X é um aberto, seja uma expressão do tipo:
+%
+\begin{equation}
+\psi = a(x_1,x_2,x_3) dx_1 \wedge dx_2 \wedge dx_3
+\end{equation}
+
+De agora em diante, vamos nos referir a estes objetos como sendo 
+k-formas, onde $k = 0,1,2,3$. Abaixo alguns exemplos:
+
+\begin{enumerate}
+  \item 0-forma: $f(x,y,z) = xy + y + z^2 $
+  \item 1-forma: $\varphi = (x + y^2)dx + \sin(xy^2)dy + e^{xyz}dz$
+  \item 2-forma: $\omega = x^2dx dy + xy^3 dy \wedge dz + \sin(yz) dx \wedge dz $
+  \item 3-forma: $\psi = z^2e^{x^2+y^2} dx \wedge dy \wedge dz $
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Produto Exterior entre formas}
+
+\hspace{0.5cm}
+Agora que já definimos o que são k-formas, e que são vetores 
+pertencentes a espaços vetoriais, vamos definir o produto 
+exterior $\varphi \wedge \omega$ entre formas diferenciais. Seja $\varphi$ uma k-forma, $\omega$ uma r-forma, e $\eta$ uma s-forma, e sendo uma função $f$, então o produto externo obedece as seguintes propriedades:
+
+\begin{enumerate}
+  \item Distributividade: $(f\omega + \eta)\wedge \varphi 
+  = f \omega \wedge \varphi + \eta \wedge \varphi$ se $r = s$
+  \item Anticomutatividade: $\omega \wedge \varphi 
+  = (-1)^{k r} \varphi \wedge \omega$
+  \item Associatividade: $\omega \wedge (\varphi \wedge \eta) 
+  = (\omega \wedge \varphi) \wedge \eta$
+  \item $dx_i \wedge dx_j = - dx_j \wedge dx_i$
+  \item $dx_i \wedge dx_i = 0$.
+\end{enumerate}
+
+E também temos que para cada k, existe uma k-forma, $0$, tal que 
+$0 + \omega = \omega$, e $0\wedge\varphi = 0$, para todas as 
+p-formas, desde que seja respeitada a relação $0 \leq k + p \leq 3$. Abaixo alguns exemplos de produto externo entre formas
+
+\vspace{0.2cm}\noindent\textbf{1.} Seja $\varphi = x dx + y dy$ e 
+$\omega = zy dx + xz dy + xy dz$:
+%
+\begin{align}
+\nonumber \varphi \wedge \omega &= (x dx + y dy) \wedge (zy dx + xz dy + xy dz) 
+\\
+&= (x^2z- zy^2) dx \wedge dy + x^2y dx \wedge dz + xy^2 dy \wedge dz.
+\end{align}
+
+
+\vspace{0.2cm}\noindent\textbf{2.} Seja $\varphi = xy dx + y dy$, e $\omega = xyz dz \wedge dx$:
+%
+\begin{align}
+\nonumber \varphi \wedge \omega &= (xy dx + y dy) \wedge (xyz dz \wedge dx) \\
+\nonumber &= x dx \wedge (xyz dz \wedge dx) + y dy                       \wedge (xyz dz \wedge dx)
+\\
+\nonumber &= - x^2yz (dz \wedge dx \wedge dx) + xy^2z dy \wedge dz \wedge dx
+\\
+&= xy^2z dy \wedge dz \wedge dx
+\end{align}
+
+
+\vspace{0.2cm}\noindent\textbf{3.} Seja $\varphi = x dx - y dy$ e 
+$\omega = x dy \wedge dz + z dx \wedge dy$:
+%
+\begin{align}
+\nonumber \varphi \wedge \omega &= (x dx - y dy) \wedge (x dy \wedge dz + z dx \wedge dy) 
+\\
+\nonumber &= x dx \wedge (x dy \wedge dz + z dx \wedge dy) 
+\\
+\nonumber &- y dy \wedge (x dy \wedge dz + z dx \wedge dy)
+\\
+&= x^2 dx \wedge dy \wedge dz 
+\end{align}
+
+Note que nos exemplos acima foram utilizados os fatos de que 
+%
+\begin{equation}
+dx \wedge dx = 0,    
+\end{equation}
+
+e que 
+%
+\begin{equation}
+dx \wedge dz \wedge dx = - dz \wedge dx \wedge dx.    
+\end{equation}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Produto entre duas 1-Forma} 
+
+
+\hspace{0.5cm}
+Sejam duas 1-forma definidas em um aberto K, 
+%
+\begin{align}
+\omega_1 &= \sum_{i}a_{i} dx_i,
+\\
+\omega_2 &= \sum_{j}b_{j} dx_j,
+\end{align}
+
+e de forma que $\omega_i:K\subset\mathbb{R}^3\to\mathbb{R}$, e sejam $a_i,b_i:\mathbb{R}^3\to\mathbb{R}$ funcionais, temos que o produto externo, definido entre estas 1-forma é dada pela seguinte relação
+%
+\begin{equation}
+\omega_1\wedge\omega_2 = \sum_{ij} a_ib_j (dx_i\wedge dx_j),    
+\end{equation}
+
+utilizando os axiomas e as propriedades de associatividade e distributividade, levando em consideração que cada $a_i dx_i$ e $b_j dx_j$ também são 1-forma:
+%
+\begin{align}
+\nonumber \omega_1 \wedge \omega_2 &= (a_1 dx_1 + a_2 dx_2 + a_3 dx_3) \wedge(b_1 dx_1 + b_2 dx_2 + b_3 dx_3)
+\\
+\nonumber &= a_1 dx_1 \wedge(b_1 dx_1 + b_2 dx_2 + b_3 dx_3) 
+\\
+\nonumber &+ a_2 dx_2 \wedge(b_1 dx_1 + b_2 dx_2 + b_3 dx_3)
+\\
+\nonumber &+ a_3 dx_3 \wedge(b_1 dx_1 + b_2 dx_2 + b_3 dx_3)
+\\
+\nonumber &= (a_1b_2 - a_2b_1) dx_1 dx_2 + (a_2b_3 - a_3b_2)dx_2dx_3	
+\\
+&+ (a_3b_1 - a_1b_3)dx_3dx_1.
+\end{align}
+
+
+Utilizando o resultado anterior, para $\omega = xdx + ydy$ e 
+$\nu = zy dx + xzdy + xydz$, temos que o produto externo entre 
+essas 1-forma, $\omega\wedge\nu$ é dado pela seguinte relação:
+%
+\[
+\omega\wedge\nu = (x^2z - y^2z)dx \wedge dy + x^2y dx 
+\wedge dz + xy^2 dy \wedge dz.
+\]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\noindent\textbf{Ex.1:} 
+Sejam as seguintes 1-forma abaixo:
+%
+\begin{eqnarray*}
+\varphi_1 &=& 2x^2dx + (x + y)dy                 \\
+\varphi_2 &=& - xdx + (x - 2y)dy                 \\
+\varphi_3 &=& x^3dx + yzdy - (x^2 + y^2 + z^2)dz \\
+\varphi_4 &=& y^2zdx - xzdy + (2x + 1)dz
+\end{eqnarray*}
+
+Calcule os produtos exteriores $(\wedge)$ entre as 1-forma, abaixo:
+%
+\begin{multicols}{3}
+\begin{enumerate}
+	\item $\varphi_1 \wedge \varphi_2 $
+	\item $\varphi_1 \wedge \varphi_3 $
+	\item $\varphi_1 \wedge \varphi_4 $
+	\item $\varphi_2 \wedge \varphi_1 $
+	\item $\varphi_2 \wedge \varphi_3 $
+	\item $\varphi_2 \wedge \varphi_4 $
+	\item $\varphi_3 \wedge \varphi_1 $
+	\item $\varphi_3 \wedge \varphi_2 $
+	\item $\varphi_3 \wedge \varphi_4 $
+	\item $\varphi_4 \wedge \varphi_1 $
+	\item $\varphi_4 \wedge \varphi_2 $
+	\item $\varphi_4 \wedge \varphi_3 $
+\end{enumerate}
+\end{multicols} 
+
+
+\noindent\textbf{Ex.2:} 
+Sejam dadas as seguintes 1-formas 
+%
+\begin{align}
+\nonumber \omega_1 &= a_1dx_1 + a_2dx_2 + a_3dx_3
+\\
+\nonumber \omega_1 &= b_1dx_1 + b_2dx_2 + b_3dx_3
+\end{align}
+
+e utilizando a definição de produto externo de formas:
+%
+\[
+\omega_1\wedge\omega_2 
+= \sum_{i,j = 1}^{3}a_ib_j(dx_i \wedge dx_j)
+\]
+
+E utilizando as relações $dx_i\wedge dx_j = - dx_j\wedge dx_i$ para $i \neq j$ e $dx_i\wedge dx_i = 0$ quando $i = j$, agrupando os termos (fator comum) mostre que:
+%
+\begin{align}
+\nonumber \omega_1 \wedge \omega_2 &= (a_1b_2 - a_2b_1)dx_1dx_2 
++ (a_2b_3 - a_3b_2)dx_2dx_3 
+\\
+&+ (a_3b_1 - a_1b_3)dx_3dx_1.
+\end{align}
+
+\noindent\textbf{Ex.3:} 
+Sejam as formas diferenciais 
+%
+\begin{align}
+\nonumber \omega_1 &= a_1dx + a_2dy + a_3dz,
+\\
+\nonumber \omega_2 &= b_1dx + b_2dy + b_3dz,
+\\
+\nonumber \omega_3 &= c_1dx + c_2dy + c_3dz.
+\end{align}
+
+Calcule $\varphi_1 = \omega_1\wedge\omega_2$ e $\varphi_2 = \omega_2\wedge\omega_3$, depois calcule $\varphi_1\wedge\omega_3$ e $\omega_1\wedge\varphi_2$ e mostre que obtemos o mesmo resultado, 
+com isso monstramos que é satisfeita a propriedade de associatividade de formas diferenciais:
+%
+\[
+(\omega_1\wedge\omega_2)\wedge\omega_3 
+= \omega_1\wedge(\omega_2\wedge\omega_3)
+\]
+
+\noindent\textbf{Ex.4:} 
+Sejam $\varphi = (x^2 - y^2) dx \wedge dy$ e $\omega = (x - y) dx \wedge dy$, encontre as formas $\nu = y \varphi + x^2\omega$ e $\psi = - \varphi + (x + y) \omega$.
+
+
+\vspace{0.5cm}
+\noindent\textbf{Ex.5:}
+Sejam a 1-forma 
+%
+\begin{equation}
+\nonumber \omega = a_1dx + a_2dy + a_3dz,
+\end{equation}
+
+e a 2-forma 
+%
+\begin{equation}
+\nonumber  \varphi = b_1 dy\wedge dz + b_2 dz \wedge dx + b_3 dx \wedge dy,
+\end{equation}
+
+então demonstre a seguinte relação:
+%
+\[ 
+\omega \wedge \varphi = \left(\sum_{i}a_i b_i\right)dx 
+\wedge dy \wedge dz
+\]
+
+
+
+

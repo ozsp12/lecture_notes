@@ -1,0 +1,158 @@
+\section{Conjuntos e Relações} 
+
+
+Um conjunto é uma coleção de elementos os quais em geral são representados por letras maiúsculas e seus elementos por letras minúsculas ou números. 
+%\linespaced 
+
+$ A = \{ a, e, i, o ,u\} $, $  B = \{2, 4, 6, 8, 10\} $
+
+$a \in A$ $\to$ o elemento $a$ pertence ao conjunto $A$;
+
+$2 \in B$ $\to$ o número 2 pertence ao conjunto $B$.
+
+%\linespacedEndSection
+
+\subsection{Definições e Exemplos}
+
+Um conjunto pode ser descrito através de uma propriedade $p$ onde todo elemento do conjunto satisfaz essa propriedade.
+
+% Definição 1
+\begin{definition}
+	Dado um conjunto $\mathbb{A}$ com uma propriedade $\mathit{p}$ definimos $\mathbb{A}$ como,
+	
+	$$ \mathbb{A} \; = \; \{x \; | \; x \; tem \; a \; propriedade \; \mathit{p} \} $$
+	
+\end{definition} 
+
+\begin{example}
+	$X = \{ x | x \in \mathbb{Z}, 0 \leq x \leq 500 \}$ \\
+	ou \\
+	$ X = \{0, 1, 2, 3, \dots, 500 \} $
+\end{example}
+
+\subsubsection{Conjunto Vazio}
+
+Consideramos um conjunto o qual não possua elementos, definindo sua representação como se segue.
+%\linespaced
+% Definição 2
+\begin{definition}
+	\textit{Conjunto vazio} é aquele conjunto que não possui elemento algum, representado por $\emptyset$
+\end{definition}
+
+\begin{example}
+	$$A = \{ x | x \neq x \} = \emptyset $$
+
+	$$B = \{ x | x \; \text{é} \; \text{ímpar e múltiplo de } \; 2 \}$$
+
+	$$C = \{ x | x > 0 \; e \; x < 0  \} = \emptyset$$
+\end{example}
+
+\subsubsection{Conjunto Unitário}
+%\linespaced
+% Definição 3
+\begin{definition}
+	Conjunto unitário é aquele conjunto que possui apenas um elemento.
+\end{definition}
+
+\begin{example}
+	
+	$$ A \; = \; \{ x | x \; \text{é divisor de } 1, \; x \in \mathbb{Z^+} \} = \{ 1 \} $$ 
+	$$ B \; = \; \{ x| 3x+1 = 10 \}  = \{ 3 \}$$
+	
+\end{example}
+
+\subsubsection{Conjuntos Iguais}
+%\linespaced
+% Definição 4
+\begin{definition}
+	Conjuntos iguais, são conjuntos para os quais dados $A$ e $B$, tal que todo elemento de $A$ pertence à $B$ e reciprocamente todo elemento de $B$ pertence à $A$.
+	
+	$$ A = B  \Leftrightarrow \; \forall x \; | \; x \in A \Leftrightarrow x \in B$$
+\end{definition}
+
+\begin{example}
+	$$\{ 3 \} = \{ x \in \mathbb{Z} | 3x+1 = 10 \} $$
+	$$\{ 1 \} = \{ x | x \; \text{é divisor de 1, } x \in \mathbb{Z^+} \} $$
+\end{example}
+
+\subsubsection{Subconjuntos}
+%\linespaced
+% Definição 5
+\begin{definition}
+	Dizemos que $A$ é \underline{subconjunto} de $B$, se e somente se, todo elemento de $A$ pertence também à $B$.
+	
+	$$ A \; \subset \; B \; \rightarrow  \;A \; \acute{e} \; subconjunto \; de \; B $$
+	
+	$$ A \subset B = \{ \forall x \; | \; x \in A \; \Rightarrow x \in B  \} $$
+\end{definition}
+%\linespaced
+
+Podemos indicar que $A$ é subconjunto de $B$ das seguintes formas:\\
+
+\noindent
+$\bullet$ $A \subset B$ ("$A$ é subconjunto de $B$);
+
+\noindent
+$\bullet$ $B \supset A$ ($B$ contém $A$); \\
+
+
+\noindent
+\textbf{Propriedades da Inclusão}
+%\linespaced
+
+
+\emph{A1.}  $\emptyset \subset A$
+
+\begin{proof}
+	Pela definição de subconjunto devemos mostrar \\ que $\forall x \; | \; x \in \emptyset \Rightarrow x \in A$. Como  $x \in \emptyset$ é falsa, a implicação é verdadeira.
+\end{proof}
+
+\emph{A2.}  Deflexiva $( A \subset A)$
+
+\begin{proof}
+	$\forall x \; | \; x \in A \; \Rightarrow \; x \in A$.
+\end{proof}
+
+\emph{A3.} Antissimétrica $( A \subset B $ e $ B \subset A \; \Rightarrow \; A \; = \; B )$ 
+
+\begin{proof}
+	$ A \subset B \; = \; \{ \forall x | x \in A \Rightarrow x \in B \} $ \\
+	$ B \subset A \; = \; \{ \forall x | x \in B \Rightarrow x \in A\} $ \\
+	$ \sim A = B \; : \; \{ \forall x | x \in A \Leftrightarrow x \in B \} $
+	
+\end{proof}
+
+\emph{A4.} Transitiva $( A \subset B$ e $ B \subset C \Rightarrow A \subset C )$
+
+\begin{proof}
+	$ A \subset B \; = \; \{ x | x \in A \Rightarrow x \in B \} $ \\
+	$ B \subset C \; = \; \{ x | x \in B \Rightarrow x \in C \} $ \\
+Como $x$ é arbitrário $A \subset C $.
+\end{proof} 
+
+\subsubsection{Conjunto das Partes}
+
+%\linespaced
+\begin{definition}
+	Conjunto das partes de $A$, $P(A)$,
+	$$P(A) \; = \; \{ X \; | \; X \subset A \}$$ 
+	
+	$X \subset P(A)$ é o conjunto das partes de $A$, sendo formado por todos os subconjuntos de $A$.
+	
+\end{definition}
+
+\begin{example}
+	%\linespaced
+	
+	%noindent
+	$ A \; = \; \{ \; a, \; b \} $
+	
+	$ P(A) \; = \; \{ \emptyset, \; \{ a \}, \; \{ b \}, \; \{ a, b \} \} $ 
+	
+	$ B \; = \; \{ a \} $ 
+	
+	$P(B) \; = \; \{ \emptyset, \; \{ a \} \;\} $
+
+\end{example}
+
+Notando que $\emptyset$ e $A$ são sempre partes de $A$. Se $A$ tem $n$ elementos $P(A)$ terá sempre $2^{n}$ elementos.

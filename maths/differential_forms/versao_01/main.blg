@@ -1,0 +1,79 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 1.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 2.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 3.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 4.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 5.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 6.aux
+Reallocating 'name_of_file' (item size: 1) to 6 items.
+A level-1 auxiliary file: 7.aux
+Reallocating 'name_of_file' (item size: 1) to 9 items.
+The style file: unsrturl.bst
+Reallocating 'name_of_file' (item size: 1) to 11 items.
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendix1.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendix2.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendix3.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendix4.aux
+Reallocating 'name_of_file' (item size: 1) to 14 items.
+A level-1 auxiliary file: appendix5.aux
+I found no \citation commands---while reading file main.aux
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: references.bib
+You've used 0 entries,
+            2616 wiz_defined-function locations,
+            593 strings with 4699 characters,
+and the built_in function-call counts, 41 in all, are:
+= -- 0
+> -- 0
+< -- 0
++ -- 0
+- -- 0
+* -- 2
+:= -- 30
+add.period$ -- 0
+call.type$ -- 0
+change.case$ -- 0
+chr.to.int$ -- 0
+cite$ -- 0
+duplicate$ -- 0
+empty$ -- 1
+format.name$ -- 0
+if$ -- 1
+int.to.chr$ -- 0
+int.to.str$ -- 0
+missing$ -- 0
+newline$ -- 3
+num.names$ -- 0
+pop$ -- 0
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 1
+stack$ -- 0
+substring$ -- 0
+swap$ -- 0
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 0
+width$ -- 0
+write$ -- 2
+(There was 1 error message)

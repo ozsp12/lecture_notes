@@ -1,0 +1,80 @@
+\documentclass[a5paper,10pt]{article}
+\usepackage[portuguese]{babel}
+%\usepackage[latin1]{inputenc}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,
+pagebackref,colorlinks=true,citecolor=blue,
+linkcolor=black,urlcolor=blue,filecolor=blue,
+bookmarksopen=true]{hyperref}
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb, amsthm}
+\usepackage{textcomp}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{makeidx} 
+\usepackage[papersize={13.3cm,20.9cm},left=1cm,
+right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fourier-orns}
+%\usepackage{lmodern}
+\usepackage{mdframed,xcolor}
+\usepackage{sectsty}
+\usepackage{enumitem}
+%\usepackage{physics}
+%5.25in,8.26in
+
+\usepackage{afterpage}
+\usepackage{wrapfig}
+\graphicspath{ {./images/} }
+
+
+\newcommand\blankpage{%
+	\null
+	\thispagestyle{empty}%
+	\addtocounter{page}{-1}%
+	\newpage}
+%\linespace espaçamento entre linhas de 3mm comum.
+\newcommand\linespaced{
+	\null
+	\noindent
+	\vspace{3mm}}
+% espaçamento para quebra de linha após título de seção/capitulo
+\newcommand\linespacedtitle{
+	\null
+	\noindent
+	\vspace{4mm}}
+% espaçamento de fim de seção
+\newcommand{\linespacedEndSection}{
+	\null
+	\vspace{6mm}
+}
+%-------------------------------
+
+
+\newtheorem{definition}{Definição}
+\newtheorem{example}{Exemplo}
+%\newtheorem{proof}{Prova}
+
+
+
+\title{Teoria dos Conjuntos \\ \small{Uma Breve Apresentação}}
+\author{Osvaldo Luiz}
+
+\begin{document}
+\maketitle{\thispagestyle{empty}\null}
+\newpage
+\blankpage
+
+\tableofcontents
+\newpage
+\blankpage
+
+% Seções
+\include{sec1}
+\include{sec2}
+\include{sec3}
+\include{sec4}
+
+\end{document}

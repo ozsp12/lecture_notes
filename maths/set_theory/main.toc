@@ -1,0 +1,24 @@
+\babel@toc {portuguese}{}
+\contentsline {section}{\numberline {1}Conjuntos e Relações}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Definições e Exemplos}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Conjunto Vazio}{3}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Conjunto Unitário}{4}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Conjuntos Iguais}{4}{subsubsection.1.1.3}%
+\contentsline {subsubsection}{\numberline {1.1.4}Subconjuntos}{4}{subsubsection.1.1.4}%
+\contentsline {subsubsection}{\numberline {1.1.5}Conjunto das Partes}{5}{subsubsection.1.1.5}%
+\contentsline {section}{\numberline {2}Operações com Conjuntos}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Definições de Operações Básicas}{6}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Reunião de Conjuntos}{6}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Interseção de Conjuntos}{7}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Conjuntos Disjuntos}{7}{subsubsection.2.1.3}%
+\contentsline {subsubsection}{\numberline {2.1.4}Propriedades da União e Interseção de Conjuntos}{7}{subsubsection.2.1.4}%
+\contentsline {subsubsection}{\numberline {2.1.5}Diferença de Conjuntos}{8}{subsubsection.2.1.5}%
+\contentsline {subsubsection}{\numberline {2.1.6}Diferença Simétrica}{11}{subsubsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.2}Exercícios Resolvidos}{12}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Exemplos}{15}{subsection.2.3}%
+\contentsline {section}{\numberline {3}Conjuntos Numéricos}{21}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Números Naturais e Inteiros}{21}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Números Racionais}{21}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Números Irracionais}{22}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Números Reais}{23}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Princípio da Indução Finita}{24}{section.4}%

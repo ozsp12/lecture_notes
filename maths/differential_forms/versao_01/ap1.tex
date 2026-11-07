@@ -1,0 +1,92 @@
+\appendix \section{Conservação de Energia}
+
+\hspace{0.5cm}
+Nesta seção vamos demonstrar uma aplicação de diferenciabilidade, 
+neste caso particular da regra da cadeia, em física. Vamos nos motivar com um dos princípios físicos mais importantes, a conservação da energia. Seja $U \subset \mathbb{R}^n$ um aberto, de forma que possamos definir um espaço vetorial nesse conjunto. Como estamos trabalhando no Espaço Euclidiano, é dado que podemos compor este espaço vetorial com normas, métricas euclidianas, diferenciabilidade, etc. Seja $f$ uma função diferenciável, podemos associar a cada ponto de $U$, o vetor $\nabla f (p)$, onde $p\in U$. Fisicamente, vetores são interpretados como campos de força, por exemplo, o Campo Elétrico, ou ainda o Campo Magnético. Se $F$ for um campo de forças em $U$, para cada ponto $x \in U$, podemos determinar os valores desse campo. Caso exista uma função $\Phi:U\subset\mathbb{R}^n\to\mathbb{R}$, diferenciável tal que: 
+%
+\begin{equation}
+F(x) = - \nabla \Phi.
+\end{equation}
+
+Então o campo é dito conservativo, e a função $\Phi$ é a chamada 
+função potencial, um exemplo é o potencial elétrico. Supondo uma 
+massa $m$ se movendo nesse campo vetorial através de uma curva 
+parametrizada $x(t): I \to \mathbb{R}^n$, onde $I \subset \mathbb{R}$, a derivada dessa função é a velocidade da partícula (determinada num ponto $t_0 \in I$):
+%
+\[
+\dot{x}(t_0) = \frac{dx}{dt}(t_0) 
+= \lim_{v \to 0}\frac{x(t_0 + v) - x(t_0)}{v}
+\]
+
+A segunda derivada dessa curva é a aceleração da partícula:
+%
+\[
+\ddot{x}(t_0) = \frac{d^2x}{dt^2}(t_0)
+\]
+
+Essa partícula está sujeita a Lei de Newton 
+$F(x) = (F\circ x)(t) = m\ddot{x}$, e levando em conta o fato 
+da partícula se movimentar em um campo conservativo $(\Phi)$:
+%
+\[
+m \ddot{x} = - \nabla \Phi(x)
+\]
+
+Aplicando o produto interno na equação acima:
+%
+\[
+m \langle\ddot{x},\dot{x}\rangle 
+= - \langle \nabla \Phi(x),\dot{x}\rangle 
+\]
+
+Mas o termo do lado esquerdo $\langle\ddot{x},\dot{x}\rangle = \langle\dot{x},\ddot{x}\rangle$ nada mais é do que a diferencial da função $\frac{1}{2}\dot{x}^2$, e o termo do lado direito $\langle \nabla \Phi(x),\dot{x}\rangle$ nada mais é do que a diferencial (regra da cadeia) da função $\Phi(x(t))$. Organizando os termos do lado esquerdo e utilizando o fato de que a diferencial é um operador linear, ou seja $d(f + g) = df + dg$ para funções $f,g$ diferenciáveis, temos que:
+%
+\[
+d\left(\frac{1}{2}m\dot{x}^2 + \Phi(x) \right) = 0
+\]
+
+Como a derivada da função dentro dos parênteses é zero, isso 
+significa que é uma função constante, ou seja:
+%
+\[
+\frac{1}{2}m\dot{x}^2 + \Phi(x) = \text{constante} 
+\]
+
+Vamos interpretar esse resultado fisicamente. O termo 
+$\frac{1}{2}m\dot{x}^2$ é a energia cinética da partícula, 
+enquanto que $\Phi(x)$ é a energia potencial da partícula 
+devido ao campo em que ela se encontra. Esse resultado demonstra 
+que a energia total é a soma da sua energia cinética e potencial, 
+e se trata de uma grandeza conservada. É importante ressaltar que 
+esse resultado só é válido quando podemos determinar 
+$F = - \nabla\Phi$, ou seja quando o campo vetorial for 
+conservativo. Um exemplo de campo conservativo é uma função 
+inverso do quadrado:
+%
+\[
+\Phi(x) = \frac{C}{r} \to F(x) 
+= - \nabla\Phi = \frac{C}{r^3}x
+\]
+
+Onde $r = ||x||$ é a norma do vetor $x$, e $C\in\mathbb{R}$ 
+é uma constante. Observando também que $x/r$ é um vetor unitário, 
+pois $||x/r|| = 1$. 
+
+
+\vspace{0.2cm}
+\noindent \textbf{Observação}
+\\
+Essa é apenas uma curiosidade, esta observação ficará
+clara nos capítulos em que discutiremos formas diferenciais.
+De uma forma mais rigorosa, a função $\Phi$ é uma 0-forma e 
+$F = d\Phi$ é uma 1-forma exata, que resulta da 
+aplicação da diferencial em $\Phi$. O que acontece é que há uma 
+correspondência entre as bases $(dx_i)_{i=1}^{n}$ do espaço dual 
+$(\mathbb{R}^n)*$ do Espaço Euclidiano, cuja base é $(e_i)_{i=1}^{n}$. 
+E o produto interno natural induz um isomorfismo entre esses espaços 
+duais, de forma que para $v*\in (\mathbb{R}^n)*$ e $x\in\mathbb{R}^n$ 
+temos que $v*(x) = \langle v,x\rangle$. Os físicos utilizam muito 
+essa correspondência, pois preferem calcular produtos internos 
+(naturais a seus espaços) do que utilizar funcionais lineares, 
+$\varphi(v,x) = a_1x_1 + \ldots + a_nx_n$, onde $v = (a_1,\ldots,a_n)$. 
+O gradiente de uma função corresponde a diferencial de uma 0-forma.

@@ -1,0 +1,496 @@
+\section{Derivada de formas}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivada Exterior}
+
+\hspace{0.5cm}
+Neste capítulo vamos introduzir a definição de derivada exterior 
+de uma forma diferencial. Mais a frente aprenderemos que se trata 
+de uma função multilinear, mas por enquanto usaremos novamente o 
+$\mathbb{R}^3$ como motivador. 
+
+Seja $\omega$ uma k-forma, definida em $X \subset \mathbb{R}^3$, 
+onde $X$ é um aberto qualquer, definimos a derivada exterior $(d)$ 
+como o operador linear:
+%
+\begin{equation}
+d:T^{p}(X) \to T^{p+1}(X).
+\end{equation}
+
+\hspace{0.5cm}
+Onde $T^{p}(X)$ é o conjunto de todas as k-formas definidas em $X$, da definição percebemos que ao aplicar o operador em uma k-forma, 
+obtemos uma (k+1)-forma. Para uma 0-forma $f$ sua derivada $df$ é 1-forma:
+%
+\begin{equation}
+df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy + \frac{\partial f}{\partial z}dz
+\end{equation}
+
+Para a 1-forma,
+%
+\begin{equation}
+\varphi = P(x,y,z)dx + Q(x,y,z)dy + R(x,y,z)dz    
+\end{equation}
+
+sua derivada $d\varphi$ é uma 2-forma
+%
+\begin{align}
+\nonumber d\varphi &= \left(\frac{\partial R}{\partial y} 
+- \frac{\partial Q}{\partial z}\right) dy \wedge dz 
++ \left(\frac{\partial P}{\partial z} 
+- \frac{\partial R}{\partial x}\right) dx \wedge dz
+\\
+&+ \left(\frac{\partial Q}{\partial x} 
+- \frac{\partial P}{\partial y}\right) dx \wedge dy
+\end{align}
+
+Para a 2-forma
+%
+\begin{equation}
+\omega = A dy \wedge dz + B dz \wedge dx + C dx \wedge dy    
+\end{equation}
+
+sua derivada $d\omega$ é uma 3-forma,
+%
+\begin{equation}
+d\omega = \left(\frac{\partial A}{\partial x} 
++ \frac{\partial B}{\partial y} 
++ \frac{\partial C}{\partial z}\right) dx 
+\wedge dy \wedge dz
+\end{equation}
+
+Vamos apresentar, sem demonstração formal no momento, 
+os teoremas que definem o operador derivada exterior.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teoremas: Derivada Exterior} 
+
+\begin{enumerate}
+  \item $ d(\omega + \eta) = d\omega + d\eta$
+  \item $ d(\omega \wedge \varphi) = d\omega \wedge \varphi 
+  + (-1)^{k}\omega \wedge d\varphi$, sendo $\omega$ uma k-forma
+  \item Para todo $\omega$ temos que $d(d\omega) = 0$
+  \item Para toda função (0-forma) $f$ tem-se que:
+  %
+  \begin{equation}
+  df = \frac{\partial f}{\partial x}dx + \frac{\partial f}{\partial y}dy 
+  + \frac{\partial f}{\partial z}dz
+  \end{equation}
+\end{enumerate}
+
+Vale notar que da propriedade (3) é possível concluir que 
+%
+\begin{equation}
+d(dx) = d(dy) = d(dz) = 0,
+\end{equation}
+
+de fato basta tomar $\omega = dx$ e o resultado é imediato
+%
+\begin{equation}
+d(d\omega) = d(dx) = 0,
+\end{equation}
+
+as outras relações saem da mesma maneira. Além disso, é também um resultado geral, e como veremos em capítulos posteriores pode ser facilmente demonstrada. Por enquanto mostraremos que esse resultado é válido no $\mathbb{R}^3$, para isso tomemos a derivada da 1-forma:
+%
+\begin{equation}
+d(df) = d\left(\frac{\partial f}{\partial x}dx\right) 
++ d\left(\frac{\partial f}{\partial y}dy\right) 
++ d\left(\frac{\partial f}{\partial z}\right)dz
+\end{equation}
+
+Calculando para os termos do lado direito, e lembrando que 
+%
+\begin{equation}
+d(dx) = d(dy) = d(dz) = 0.    
+\end{equation}
+
+tem-se que,
+%
+\begin{align}
+d\left(\frac{\partial f}{\partial x}dx\right) &= 
+\frac{\partial^2f}{\partial y \partial x} dy \wedge dx 
++ \frac{\partial^2f}{\partial z \partial x} dz \wedge dx   
+\\
+d\left(\frac{\partial f}{\partial y}dy\right) &= 
+- \frac{\partial^2f}{\partial x \partial y} dy \wedge dx 
++ \frac{\partial^2f}{\partial z \partial x} dz \wedge dx  
+\\
+d\left(\frac{\partial f}{\partial z}dz\right) &= 
+\frac{\partial^2f}{\partial x \partial z} dz \wedge dx 
++ \frac{\partial^2f}{\partial y \partial z} dy \wedge dz
+\end{align}
+
+Somando os três termos das equações acima, e lembrando que as derivadas parciais mistas comutam, então $d(df) = 0$. Segue imediatamente da propriedade (3) e da propriedade (2) o resultado 
+%
+\begin{equation}
+d(dx_i \wedge dx_j) = 0,    
+\end{equation}
+
+de fato, $dx_i$ é 1-forma, e aplicando a propriedade (2)
+%
+\begin{equation}
+d(dx_i \wedge dx_j) = d(dx_i) \wedge dx_j 
++ (-1)dx_i \wedge d(dx_j) = 0   
+\end{equation}
+
+fato que implica em,
+%
+\begin{equation}
+d(dx_i) = 0,
+\end{equation}
+
+A propriedade (1) é óbvia, e a prova disso é imediata, dado que a diferencial $(d)$ é um operador linear. A propriedade (4) é simplesmente a definição de diferencial de uma função (0-forma). A propriedade (2) é conhecida como a regra de Leibniz, e vem do fato de k-formas serem formas multilineares.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A Regra de Leibniz}
+
+\hspace{0.5cm}
+Para o caso em que $\omega = \sum_{i}a_i dx_i$ e $\varphi 
+= \sum_{j}b_j dx_j$ são 1-forma,
+%
+\begin{align}
+\nonumber d(\omega \wedge \varphi) &= d\left(\sum a_{i} b_{j} dx_{i} 
+\wedge dx_{j} \right) 
+\\ 
+&= \sum \frac{\partial (a_i b_j)}{\partial x_k} dx_k \wedge dx_i \wedge dx_j,
+\end{align}
+
+aplicando a regra da cadeia no lado direito da equação acima, tem-se o seguinte resultado
+%
+\begin{align}
+\nonumber d(\omega \wedge \varphi) &= \sum \frac{\partial a_i}{\partial x_k} b_j dx_k \wedge dx_i \wedge dx_j 
+\\
+&+ \sum \frac{\partial b_j}{\partial x_k} a_i dx_k \wedge dx_i \wedge dx_j,
+\end{align}
+
+aplicando a propriedade associativa de formas no lado direito da equação acima nas duas somatórias, e utilizando a propriedade de comutativide $dx_i \wedge dx_j = - dx_j \wedge dx_i$,
+%
+\begin{align}
+\nonumber d(\omega \wedge \varphi) &= \sum \left(\frac{\partial a_i}{\partial x_k} dx_k \wedge dx_i\right)  \wedge (b_j dx_j) 
+\\
+&+ \sum (-1)(a_i dx_i) \wedge \left(\frac{\partial b_j}{\partial x_k} \wedge dx_k \wedge dx_j\right)
+\end{align}
+
+Note que por definição as 2-forma nos parênteses dos termos do lado direito da equação são as derivadas $d\omega$, e $d\varphi$
+%
+\begin{equation}
+d(\omega \wedge \varphi) = \sum d\omega_i \wedge \varphi_j
+- \sum \omega_i \wedge d\varphi_j,
+\end{equation}
+
+e finalmente demonstra-se que 
+%
+\begin{equation}
+d(\omega \wedge \varphi) = d\omega \wedge \varphi - \omega \wedge d\varphi. 
+\end{equation}
+
+O resultado que obtivemos acima pode ser demonstrado para quaiser k-forma, como mostraremos mais a frente ao definir as k-formas em variedades mais gerais, no $\mathbb{R}^n$ por exemplo.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Teorema de Schwarz} 
+
+Mostramos anteriormente que se existir uma função $f$ tal que 
+$\omega = df$, onde $\omega$ é 1-forma, então $d\omega = d(df) = 0$, mas fizemos uma hipótese que não foi justificada, a simetria das derivadas parciais mistas, 
+%
+\begin{equation}
+\frac{\partial f}{\partial x_i \partial x_j} 
+= \frac{\partial f}{\partial x_j \partial x_i}
+\end{equation}
+
+Esse resultado é devido à Hermann Schwarz, a condição para a 
+simetria exige apenas que as segundas derivadas sejam contínuas, 
+ou de uma maneira mais fraca, que sejam diferenciáveis. Uma maneira direta de estabelecer esse resultado é aplicando o Teorema de Green à função $f$, e essa é na verdade a nossa motivação (escondida até agora no texto), como generalizar os teoremas de integrais, a extensão do Teorema Fundamental do Cálculo. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A derivada de 1-forma é 2-forma} 
+
+Seja a 1-forma $\phi = a_1(x,y,z)dx_1 + a_2(x,y,z)dx_2 + a_3(x,y,z)dx_3$, onde $a_i:X\subset \mathbb{R}^3 \to \mathbb{R}$ são funções de classe $C^r(\mathbb{R})$ onde $r \geq 2$, calculemos sua derivada exterior.
+%
+\begin{eqnarray*}
+d\phi &=& d\left(\sum a_i dx_i \right) = 
+\sum \frac{\partial a_i}{\partial x_j} dx_j \wedge dx_i                
+\\ 
+      &=& \sum_{i=j} \frac{\partial a_i}{\partial x_i} dx_i 
+\wedge dx_i + \sum_{i>j} \frac{\partial a_i}{\partial x_j} dx_j 
+\wedge dx_i
+      + \sum_{i<j} \frac{\partial a_i}{\partial x_j} dx_j 
+\wedge dx_i 
+\\
+      &=& \sum_{j>i} \frac{\partial a_j}{\partial x_i} dx_i 
+\wedge dx_j - \sum_{i<j} \frac{\partial a_i}{\partial x_j} dx_i 
+\wedge dx_j 
+\\
+      &=& \sum_{i<j} \left(\frac{\partial a_j}{\partial x_i} 
+- \frac{\partial a_i}{\partial x_j}\right)dx_i \wedge dx_j
+\end{eqnarray*}
+
+A quarta igualdade foi construída da seguinte maneira, para 
+os termos em que $i=j$, é propriedade fundamental do produto 
+exterior que $dx_i \wedge dx_i = 0$, e na somatória para 
+termos $i > j$, invertemos os dois índices. Para a somatória 
+onde $i < j$ fizemos a permutação entre as 1-forma $dx_i$ e 
+$dx_j$ e utilizando a propriedade de que $\nu \wedge \mu 
+= (-1)^{kr} \mu \wedge \nu$.
+%
+\[
+d\phi = \left(\frac{\partial a_3}{\partial x_2} 
+- \frac{\partial a_2}{\partial x_3}\right) dx_2 \wedge dx_3 
++ \left(\frac{\partial a_1}{\partial x_3} 
+- \frac{\partial a_3}{\partial x_1}\right) dx_3 \wedge dx_1
++ \left(\frac{\partial a_2}{\partial x_1} 
+- \frac{\partial a_1}{\partial x_2}\right) dx_1 \wedge dx_2
+\]
+
+O resultado acima possui uma interpretação geométrica importante, 
+pois lembra muito o rotacional de um vetor, $\nabla \times a$. 
+Este resultado será explorado mais a frente. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{A derivada de 2-forma é 3-forma} 
+
+Seja a 2-forma $\phi = b_{1}(x,y,z)dx_2 \wedge dx_3 + b_{2} (x,y,z) 
+dx_3 \wedge dx_1 + b_{3}(x,y,z)dx_1 \wedge dx_2$, onde 
+$b_i:X\subset \mathbb{R}^3 \to \mathbb{R}$ são funções de 
+classe $C^r(\mathbb{R})$ onde $r \geq 2$, calculemos sua 
+derivada exterior.
+%
+\begin{eqnarray*}
+\phi                        &=& b_{1}dx_2 \wedge dx_3 + b_{2} dx_3 
+\wedge dx_1 + b_{3} dx_1 \wedge dx_2 
+\\
+\to d\phi                   &=& d(b_1 dx_2 \wedge dx_3) 
++ d(b_2 dx_3 \wedge dx_1) + d(b_3 dx_1 \wedge dx_2) 
+\\
+d(b_1 dx_2 \wedge dx_3) &=& \sum_{i} \frac{\partial b_1}{\partial x_i} dx_i 
+\wedge dx_2 \wedge dx_3 = \frac{\partial b_1}{\partial x_3} dx_1 
+\wedge dx_2 \wedge dx_3   
+\\
+d(b_2 dx_3 \wedge dx_1) &=& \sum_{i} \frac{\partial b_2}{\partial x_i} dx_i 
+\wedge dx_3 \wedge dx_1 = \frac{\partial b_2}{\partial x_2} dx_1 
+\wedge dx_2 \wedge dx_3   
+\\
+d(b_3 dx_1 \wedge dx_2) &=& \sum_{i} \frac{\partial b_3}{\partial x_i} dx_i 
+\wedge dx_1 \wedge dx_2 = \frac{\partial b_3}{\partial x_3} dx_1 
+\wedge dx_2 \wedge dx_3 
+\end{eqnarray*}
+%
+Somando as três derivadas exteriores do lado direito, chegamos ao resultado:
+%
+\[
+d\phi = \left(\frac{\partial b_1}{\partial x_1} 
++ \frac{\partial b_2}{\partial x_2} 
++ \frac{\partial b_3}{\partial x_3}\right) dx_1 
+\wedge dx_2 \wedge dx_3
+\]
+%
+Notando que o termo em parêntese é o conhecido Laplaciano 
+do vetor $b = (b_1,b_2,b_3)$:
+%
+\[
+\nabla^2b = \frac{\partial b_1}{\partial x_1} 
++ \frac{\partial b_2}{\partial x_2} 
++ \frac{\partial b_3}{\partial x_3}
+\]
+%
+O resultado obtido será discutido em maiores detalhes 
+nas próximas seções.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Produto externo de 1-forma e 2-forma}
+Sejam a 1-forma $\omega = a_1dx + a_2dy + a_3dz$, e a 2-forma 
+$\varphi = b_1 dy\wedge dz + b_2 dz \wedge dx + b_3 dx \wedge dy$:
+%
+%
+\[
+\omega \wedge \varphi = \left(\sum_{i}a_i b_i\right)dx 
+\wedge dy \wedge dz
+\]
+%
+É interessante notar que o termo entre parênteses 
+$\sum_{i}a_i b_i$ é o conhecido produto escalar entre dois 
+vetores $\langle a,b\rangle$, onde $a,b\in\mathbb{R}^3$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Formas Fechadas e formas exatas} 
+
+Uma k-forma $(\omega)$ é dita \textbf{exata} se existir 
+uma (k-1)-forma $(\phi)$ tal que $\omega = d\phi$. 
+A condição necessária e suficiente para que $\omega$ seja 
+exata (definida em uma região simplesmente conexa) é que 
+suas derivadas mistas sejam simétricas (e obviamente 
+diferenciáveis). Uma k-forma $(\omega)$ é dita 
+\textbf{fechada} quando $d\omega = 0$. A condição 
+necessária e suficiente para que a forma seja fechada 
+é de que suas derivadas parciais sejam simétricas. 
+É imediato o corolário de que toda forma exata é fechada.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Produto externo de duas 1-forma exatas}
+Sejam duas funções diferenciáveis (pelo menos classe 
+$C^2(\mathbb{R})$, $f,g:U\subset\mathbb{R}^2\to \mathbb{R}$, 
+de forma que $\phi = df$ e $\omega = dg$ sejam 1-formas, 
+calcularemos agora $\phi \wedge \omega$:
+%
+\begin{eqnarray*}
+\phi \wedge \omega &=& \sum_{i,j} \frac{\partial f}{\partial x_i} 
+\frac{\partial g}{\partial x_j} dx_i \wedge dx_j 
+\\
+                   &=& \sum_{i<j}\left(\frac{\partial f}{\partial x_i} 
+\frac{\partial g}{\partial x_j} - \frac{\partial f}{\partial x_j} 
+\frac{\partial g}{\partial x_i} \right) dx_i \wedge dx_j 
+\\
+                   &=& \left(\frac{\partial f}{\partial x_1} 
+\frac{\partial g}{\partial x_2} 
+- \frac{\partial f}{\partial x_2} \frac{\partial g}{\partial x_1} \right) dx_1 
+\wedge dx_2 
+\\
+                   &=& \frac{\partial(f,g)}{\partial(x_1,x_2)} dx_1
+\wedge dx_2
+\end{eqnarray*}
+%
+Onde o termo que multiplica $dx_1 \wedge dx_2$ é o determinante 
+da matriz Jacobiana. 
+%
+\[
+\frac{\partial(f,g)}{\partial(x_1,x_2)} = 
+\frac{\partial f}{\partial x_1} \frac{\partial g}{\partial x_2} 
+- \frac{\partial f}{\partial x_2} \frac{\partial g}{\partial x_1}
+\]
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Forma fechada e não exata} 
+
+Seja a seguinte 1-forma definida em $X=\mathbb{R}^2-(0,0)$ :
+%
+\[\omega = \frac{-y}{x^2+y^2}dx + \frac{x}{x^2+y^2}dy\] 
+%
+A 1-forma $\omega$ é fechada, pois $d\omega = 0$, mas não é exata, 
+pois apesar de existir localmente uma função $\theta$ tal que 
+$\omega = d\theta$, esta função é multivalor, não sendo definida 
+continuamente em $\mathbb{R}^2-(0,0)$, conhecida por função ângulo, 
+definida em $\{(x,y): x < 0, \; ou \; x \geq 0 \; e \; y \neq 0\}$.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Forma fechada e exata} 
+A 1-forma $\omega = (2xy^3+4x^3)dx + (3x^2y^2+2y)dy$ é fechada, 
+pois $d\omega = 0$ e também é exata, pois existe uma 0-forma 
+$f$ tal que $\omega = df$, esta função é $f = x^2y^3 + x^4 + y^2$, 
+ou seja, $f$ é a primitiva de $\omega$. Dessa forma, temos que:
+%
+\[
+f = d\omega \to \frac{\partial f}{\partial x} = 2xy^3+4x^3 
+\ \ , \ \ 
+\frac{\partial f}{\partial y} 
+= 3x^2y^2+2y
+\]
+%
+Notando que:
+%
+\[
+\frac{\partial^2f}{\partial y \partial x} 
+= 6xy^2 
+\ \ , \ \ 
+\frac{\partial^2 f}{\partial x \partial y} 
+= 6xy^2
+\]
+%
+O resultado acima nada mais é do que o Teorema de Cauchy, 
+as derivadas parciais mistas são iguais. Essa é a condição 
+para que a 1-forma seja fechada.Caso seja conhecida a função, 
+e ela seja diferenciável, é trivial encontrar a 1-forma associada, 
+bastando aplicar a derivada exterior em $f$, entretanto é possível 
+fazer o processo inverso, bastando integrar a 1-forma. Neste caso, 
+basta tomarmos:
+%
+\[
+\frac{\partial f}{\partial x} = 2xy^3+4x^3 
+\to f(x,y) = 
+\int (2xy^3+4x^3) dx = g(y) + x^2y^3 + x^4 
+\]
+%
+Então como sabemos a forma de $\partial_y f = 3x^2y^2+2y$, 
+podemos encontrar a função $g(y)$:
+%
+\[
+\frac{\partial f}{\partial y}
+= 3x^2y^2+2y = g'(y) + 3x^2y^2 
+\to g(y) = \int 2y dy = y^2 + c
+\]
+%
+Dessa forma encontramos a função $f$ tal que 
+$\omega = df$:
+%
+\[
+f(x,y) = x^2y^3 + x^4 + y^2 + c
+\]
+%
+Vale ressaltar que neste exemplo começamos integrando a 
+derivada parcial em relação a $x$, $f(x,y) = \int \partial_x f dx$, 
+mas nada impede que a primeira integração fosse realizada em relação 
+a y. O resultado para a função $f$ a ser encontrado seria o mesmo.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Exercícios}
+
+\begin{enumerate}
+\item Seja a 1-forma: 
+			\[
+			\varphi = (2xyz^3 + y^2 + 4z)dx 
+			+ (x^2z^3 + 2xy + 2z^3 - 1)dy 
+			+ (3x^2yz^2 + 6yz^2 + 4x - 4z)dz
+			\]
+      Mostre, seguindo o procedimento do exemplo acima, que 
+      $\varphi$ é fechada em $\mathbb{R}^3$, e que $\varphi = df$:
+      \[
+      f(x,y,z) = x^2yz^3 + xy^2 + 4xz + 4xy^3 - y - 2z^2
+      \]
+\item Seja $\omega = \frac{x}{r^3}dx + \frac{y}{r^3}dy 
++ \frac{z}{r^3}dx$, onde $r = (x^2+y^2+z^2)^{1/2}$, 
+uma 1-forma definida em $\mathbb{R}^3-(0,0)$. Mostre que 
+a 1-forma é fechada nesse domínio, e demonstre que 
+$\omega = df$, onde $f(x,y,z) = \frac{-1}{r}$.
+\item Mostre que $\omega = df$, e que $d\omega = 0$, onde 
+$\omega = ye^{xy}dx + (xe^{xy} + \cos y)dy$ e $f(x,y) = e^{xy} 
++ \sin y$.
+\item Seja a equação diferencial linear de primeira ordem não 
+homogênea $\frac{dy}{dx} + f(x)y = g(x)$, essa equação é 
+equivalente a 1-forma diferencial $\omega = (yf(x) - g(x))dx 
++ dy \equiv 0$, usando um fator integrante $\mu(x)$, é 
+possível definir uma 1-forma fechada e exata tal que 
+$\varphi = \mu \omega$. Fazendo $d(\mu\omega) = 0$, 
+encontre a relação $\frac{d\mu}{dx} - \mu f \equiv 0$, 
+demonstrando que $\mu(x) = e^{\int f(x) dx}$, verifique que 
+$\varphi = \mu\omega$ é fechada derivando a relação encontrada.
+\end{enumerate}

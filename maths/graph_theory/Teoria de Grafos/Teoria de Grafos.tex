@@ -1,0 +1,92 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage[portuges]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage[pdftex,plainpages=false,pdfpagelabels,
+pagebackref,colorlinks=true,citecolor=blue,
+linkcolor=black,urlcolor=blue,filecolor=blue,
+bookmarksopen=true]{hyperref}
+\usepackage{amsmath,amsfonts,mathrsfs,amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{makeidx} 
+\usepackage[papersize={5.25in,7in},left=1cm,
+right=1cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{fourier-orns}
+\usepackage{mdframed,xcolor}
+\usepackage{sectsty}
+\usepackage{enumitem}
+
+%%%%%%%%%%%%%%%%% Box Reflita %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newmdenv[shadow=false, shadowsize=2pt, linewidth=2pt,
+frametitlerule=true, roundcorner=20pt,]{reflita}
+
+
+%%%%%%%%%%%%%%%% comando regua %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\numberwithin{equation}{section}
+\setlength{\parskip}{2pt}
+\sectionfont{\large}
+\renewcommand{\baselinestretch}{1.2}
+\pagestyle{fancy}
+\fancyfoot[LO,L]{osvald23@gmail.com}
+\fancyfoot[RO,R]{O.L.S., Pereira}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\setlength{\textheight}{240mm}
+%\setlength{\textwidth}{145mm}
+\setlength{\headheight}{15.8pt}
+%\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+%\renewcommand{\baselinestretch}{1.3}
+
+
+\makeindex
+\begin{document}
+
+\begin{titlepage} 
+\begin{center}
+\normalsize \textsc{Coleção Matemática Divertida} 	%Subtitle
+		 	\\[1.0cm]								% 2cm spacing
+			\HRule{0.5pt} \\ [0.5cm]			% Upper rule
+			
+			{\LARGE \textbf{Teoria de Grafos}}% Title
+			
+			\HRule{0.5pt} \\ [0.5cm]		% Lower rule + 0.5cm spacing
+\end{center}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.4]{cover.jpg}
+ %\caption{}
+ \label{cover}
+\end{figure}
+
+%\vspace{0.5cm}
+
+Autor: Osvaldo Luiz dos Santos Pereira
+
+e-mail: \texttt{osvald23@gmail.com} 
+\end{titlepage} 
+
+
+\tableofcontents
+%\listoffigures
+
+\include{prefacio}
+\include{1}
+\include{2}
+\include{3}
+
+\begin{thebibliography}{}
+
+\bibitem{Fulano}
+Fulano de Tal, Livro, RJ, 2017. 
+\end{thebibliography}
+  
+\printindex
+\end{document}

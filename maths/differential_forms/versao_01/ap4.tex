@@ -1,0 +1,108 @@
+\section{Linearidade}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Diferenciabilidade não implica continuidade}
+
+A existência das derivadas em um ponto não são condições suficientes para determinar a continuidade de funções. Além disso, para que existam as derivadas é preciso fazer mais hipóteses além da suavidade das funções. Para ilustrar isso, vamos analisar o seguinte exemplo:
+%
+%
+\[
+f(x,y) = \begin{cases} 
+	\frac{xy}{x^2 + y^2} &, \text{se} \ x^2 + y^2 \neq 0 \\ 
+	0                    &, \text{se} \  x^2 + y^2 = 0 
+\end{cases}
+\]
+%
+%
+Essa função possui uma descontinuidade na origem, mas possui derivadas em todo o plano. Fora da origem suas derivadas no ponto $z = (x,y)$ são iguais a:
+%
+%
+%
+\[
+\frac{\partial f}{\partial x}(z) = \frac{y^3-x^2y}{(x^2 + y^2)^2}   
+\ \ \ , \ \ \
+\frac{\partial f}{\partial y}(z) = \frac{x^3-xy^2}{(x^2 + y^2)^2}
+\]
+%
+%
+Na origem as derivadas da função são calculadas tomando a direção $\vec{e}_x$ para calcular a derivadada em relação a x, e analogamente na direção $\vec{e}_y$ para a derivada em relação a y:
+%
+%
+%
+\begin{eqnarray*}
+\frac{\partial f}{\partial x}(0,0) &=& \lim_{t\to 0}\frac{f(t,0) - f(0,0)}{t} = 0\\
+\frac{\partial f}{\partial y}(0,0) &=& \lim_{t\to 0}\frac{f(0,t) - f(0,0)}{t} = 0
+\end{eqnarray*}
+%
+%
+Com isso podemos concluir que na origem existem as derivadas da função, porém uma rápida inspeção tomando o limite na origem nos mostra que a função não é contínua nesse ponto. De fato, basta tomar a derivada na direção $v = (t,t)$, e verificar que o limite da função para esse caminho é igual a $1/2$, e tomando o limite para o caminho $w = (0,t)$ e verificar que nesse caminho o limite é igual a 0.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Dependência Linear de v} 
+
+Admitindo $v\in\mathbb{R}^n$ um vetor arbitrário (não necessariamente retilíneo), para que a derivada direcional da função $f:U\to\mathbb{R}$ dependa linearmente de $v$ é necessário que sejam satisfeitas duas condições:
+
+\begin{enumerate}
+	\item Seja $\alpha \in \mathbb{R}$, uma constante não nula, então:
+	%
+	\[
+	\frac{\partial f}{\partial (\alpha v)} 
+	= \lim_{t \to 0} \frac{f(a + tv\alpha)-f(a)}{t} 
+	= \alpha \frac{\partial f}{\partial v}(a) 
+	\]
+	%
+	Que é o equivalente a dizer que a derivada direcional na direção $\alpha v$ existe num ponto $a\in U$, se e somente se, existe a derivada da função na direção de $v \in \mathbb{R}^n$.
+	%
+	\item Para que $f$ dependa linearmente da direção é necessário que se $v + w \in \mathbb{R}^n$, então deve ser satisfeita:
+	%
+	\[
+	\frac{\partial f}{\partial (v + w)} 
+	= \frac{\partial f}{\partial v} 
+	+ \frac{\partial f}{\partial w} 
+	\]
+\end{enumerate}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivadas direcionais e Linearidade} 
+
+Nesta seção, vamos mostrar que a existência das derivadas direcionais não implica em dependência linear. Seja a função $f(x,y) = \frac{x^2y}{x^2+y^2}$ fora da origem e $f(0,0) = 0$. 
+Um cálculo direto mostra que as derivadas parciais na origem existem, de fato, tomando um vetor arbitrário $v = (a,b)$, onde a e b são não nulos.
+%
+\[
+\frac{\partial f}{\partial v}(0,0) 
+= \lim_{t \to 0}\frac{f(at,bt)}{t}
+= \frac{a^2b}{a^2+b^2}
+\]
+%
+Tomando dois vetores arbitrários $v = (a_1,b_1)$ e $w = (a_2,b_2)$, então:
+%
+\[
+\frac{(a_1+a_2)^2(b_1+b_2)}{(a_1+a_2)^2+(b_1+b_2)^2} 
+\neq \frac{a_1^2b_1}{a_1^2+b_1^2} + \frac{a_2^2b_2}{a_2^2+b_2^2}
+\]
+%
+%
+O resultado acima demonstra que não há dependência linear na derivada direcional, apesar das derivadas existirem na origem. Mais a frente mostraremos que a hipótese de dependência linear é mais restritiva do que simplesmente a existência de derivadas parciais, para que a função seja diferenciável.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Derivada direcionais e continuidade} 
+
+Seja a função $f(x,y) = \frac{x^3y}{x^6+y^2}$ para pontos fora da origem, e $f(0,0) = 0$. Para $U = \mathbb{R}^2-\{0\}$, essa função é contínua, porém é fácil perceber que ela é descontínua na origem, de fato basta tomarmos o caminho $\beta(t) = (t,t^3)$, de forma que $(f\circ \beta)(t) = 1/2$ e para o caminho $\lambda(t) = (0,t)$ temos que $(f\circ\lambda)(t) = 0$, e verificar que o limite na origem para os dois caminhos são diferentes, entretanto existem suas derivadas direcionais na origem, tomando o vetor arbitrário $v = (a,b)$, e aplicando a  definição, temos que:
+%
+\[
+\frac{\partial f}{\partial v}(0,0) 
+= \lim_{t \to 0}\frac{f(at,bt)}{t} 
+= \frac{ta^3b}{t^4a^6+b^2} = 0
+\]
+%
+Outro exemplo de função descontínua na origem, mas com derivadas 
+existentes na origem é $f(x,y) = \frac{x^2y}{x^2+y^2}$ para pontos 
+fora da origem, e $f(0,0) = 0$, mostrado no exemplo anterior. 
+

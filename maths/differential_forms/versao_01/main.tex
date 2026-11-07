@@ -1,0 +1,189 @@
+\documentclass[a4paper,12pt,oneside]{article}
+\usepackage[utf8]{inputenc}
+%\usepackage[brazil]{babel}
+\usepackage{array}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{mdwlist}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{blindtext}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{mdwlist}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\usepackage[numbers]{natbib}
+\usepackage{url} 
+\usepackage{graphicx}
+\usepackage{caption}    
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{empheq}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{makeidx}
+\usepackage{mdframed}
+\usepackage{xcolor}
+\usepackage{fourier-orns}
+\usepackage{geometry}
+\usepackage{parskip}
+\usepackage{listings}
+\usepackage{setspace}
+\usepackage{imakeidx}
+\usepackage[
+            pdftex
+            ,plainpages=false
+            ,pdfpagelabels
+            ,pagebackref = false
+            ,hyperindex
+            ,breaklinks=true 
+            ,colorlinks=true 
+            ,citecolor=black 
+            ,linkcolor=black
+            ,urlcolor=black
+            ,filecolor=black
+            ,bookmarksopen=true
+            ]{hyperref}
+\usepackage[nopostdot,nonumberlist]{glossaries}
+\usepackage{datetime}
+%\usepackage[useregional]{datetime2}
+\usepackage{pdfpages}
+\usepackage{dashrule}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\textheight 9in  
+\topmargin -.5in   
+\def\baselinestretch{1.06}
+\textwidth 6.6in 
+\oddsidemargin 0in 
+\evensidemargin 0in
+\geometry{left=25mm,right=25mm,top=25mm,bottom=25mm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\lstset{
+  language=Python,
+	basicstyle = \fontsize{10}{12}\ttfamily%\small
+  keywordstyle=\color{blue},
+  commentstyle=\color{green!60!black},
+  stringstyle=\color{red},
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  captionpos=b,
+  escapeinside={(*@}{@*)} % If you need to include LaTeX within your code
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathOperator{\sech}{sech}
+\newcommand{\sen}{\mathrm{sen}}
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\keywords}[1]{\textbf{\textit{keywords:}} #1}
+\newcommand{\palavraschave}[1]{\textbf{\textit{palavras-chave:}} #1}
+\newcommand{\EE}{\mathbf{e}}
+\newcommand{\RR}{\mathrm{R}}
+\newcommand{\GG}{\mathbf{G}}
+\newcommand{\TT}{\mathrm{T}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\lb}[1]{\label{#1}}
+\newcommand{\up}[1]{\raisebox{0.7mm}{$\scriptstyle \, #1 $}}
+\newcommand{\dn}[1]{\raisebox{-0.7mm}{$\scriptstyle #1 $}}
+\newcommand{\upb}[1]{\raisebox{0.5mm}{$\scriptstyle #1 $}}
+\newcommand{\sty}{\scriptstyle}
+\newcommand{\ssty}{\scriptscriptstyle}
+\newcommand{\tsty}{\textstyle}
+\newcommand{\apg}{\:^{>}_{\sim}\:}
+\newcommand{\apl}{\:^{<}_{\sim}\:}
+\newcommand{\eg}{{\it e.g.\ }}
+\newcommand{\ie}{{\it i.e.\ }}
+\newcommand{\Px}{\mathcal{P}(x)}
+\newcommand{\e}{{\mathrm{e}}}
+\newcommand{\dl}{d_{\ssty L}}
+\newcommand{\dlzero}{d_{\ssty L_0}}
+\newcommand{\Vl}{V_{\ssty L}}
+\newcommand{\da}{d_{\ssty A}}
+\newcommand{\dg}{d_{\ssty G}}
+\newcommand{\dz}{d_z}
+\newcommand{\tb}{t_{\ssty B}}
+\newcommand{\rb}{r_{\ssty B}}
+\newcommand{\gaml}{\gamma_{\ssty L}}
+\newcommand{\gama}{\gamma_{\ssty A}}
+\newcommand{\gamg}{\gamma_{\ssty G}}
+\newcommand{\gamz}{\gamma_{\ssty z}}
+\newcommand{\df}{\mathrm{d}}
+\newcommand{\obs}[1]{[#1]_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\dobs}{d_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\Nobs}{N_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\Vobs}{V_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\gobs}{\gamma_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\bigobs}[1]{\left[#1\right]_{{\tsty {\ssty \rm obs}}}}
+\newcommand{\Mbar}{\bar{M}}
+\newcommand{\etal}{\textit{et al.\ }}
+\newcommand{\barbeta}{{\bar{\beta}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\newcommand{\beq}{\begin{eqnarray}}
+\newcommand{\eeq}{\end{eqnarray}}
+\def\ni{\noindent}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\numberwithin{equation}{section}
+\setlength{\parindent}{1cm}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newenvironment{resumo}{\renewcommand{\abstractname}{Resumo}\begin{abstract}}{\end{abstract}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\newcommand{\oz}{\mathbin{\mathpalette\make@circled{z}}}
+\newcommand{\odl}{\mathbin{\mathpalette\make@circled{\dl}}}
+\newcommand{\ogams}{\mathbin{\mathpalette\make@circled{\gaml^\ast}}}
+\newcommand{\make@circled}[2]{%
+  \ooalign{$\m@th#1\smallbigcirc{#1}$\cr\hidewidth$\m@th#1#2$\hidewidth\cr}%
+}
+\newcommand{\smallbigcirc}[1]{%
+  %\vcenter{\hbox{\scalebox{0.77778}{$\m@th#1\bigcirc$}}}%
+  \vcenter{\hbox{\scalebox{1.6}{$\m@th#1\bigcirc$}}}%
+}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\def\NAT@def@citea{\def\@citea{\NAT@separator}}
+\makeatother
+\makeindex[name=authors, title=Author Index]
+\makeindex[name=topics, title=Subject Index]
+\makeglossaries
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newdateformat{customdate}{\dayofweekname{\THEDAY}{\THEMONTH}{\THEYEAR}, \THEDAY\space \monthname[\THEMONTH] \THEYEAR}
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\tableofcontents
+\newpage
+
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\include{1}
+\include{2}
+\include{3}
+\include{4}
+\include{5}
+\include{6}
+\include{7}
+\bibliographystyle{unsrturl}
+\addcontentsline{toc}{section}{References}
+\bibliography{references}
+\begin{appendix}
+\include{appendix1}
+\include{appendix2}
+\include{appendix3}
+\include{appendix4}
+\include{appendix5}
+\end{appendix}
+\end{document}

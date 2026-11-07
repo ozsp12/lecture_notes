@@ -1,0 +1,249 @@
+\section{O Que São Grafos?}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Introdução}
+
+É um ramo da matemática que consiste em explicar através de
+modelos e funções matemáticas, os tipos de relações entre 
+um grupo de objetos. Por exemplo, designar a melhor rota de 
+visita entre cidades vizinhas, a conexão entre neurônios, 
+configuração de circuitos eletrônicos, etc. Possui vasta 
+aplicação em áreas como física, neurociência, computação, 
+linguística, ciências sociais, e também no desenvolvimento 
+e aperfeiçoamento de redes sociais, etc. 
+
+Um exemplo de aplicação em redes sociais seria o Facebook, 
+e seus algoritmos de sugestão do feed de notícias, de 
+sugestão de amigos, etc. 
+
+A teoria de grafos teve seu início em um artigo publicado 
+em 1736, por Leonhard Euler, no qual resolve o famoso 
+problema conhedico por `s sete pontes de Konigsberg'. 
+A literatura sobre o assunto é muito vasta, e em geral 
+muito técnica. Este livro não tem como pretensão substituir 
+esse tipo de literatura. O escopo deste livro é fazer um 
+breve passeio nos primeiros princípios sobre este ramo 
+fascinante da matemática.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\subsection{Definindo Grafos}
+
+Nesta parte do livro vamos introduzir a definição de grafos, 
+e apresentar algumas definições. Definiremos o que são 
+vértices, arestas, e apresentaremos a característica de 
+Euler.
+
+Um grafo é uma coleção de vértices (V) conectados por arestas 
+(A), formando regiões (R) bem definidas e limitadas.
+
+\index{aresta}
+\index{vértice}
+\index{região}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.45]{1.jpg}
+ \caption{Imagem de um grafo que possui 5 vértices (V), 
+ 7 arestas (A), e 4 regiões (R).}
+ \label{1}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+O matemático Leonhard Euler descobriu que ao somar o número
+de vértices ao número de regiões, e subtrair o número de 
+arestas, algo mágico acontecia! O número 
+%
+\[
+V - A + R,
+\]
+%
+hoje é conhecido como \textbf{\emph{Característica de 
+Euler}}.
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.45]{2.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{2}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{3.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{3}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{4.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{4}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{5.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{5}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{6.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{6}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{7.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{7}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{8.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{8}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{9.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{9}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{10.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{10}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+O que aconteceu com este grafo? A característica de Euler
+não é mais igual a 2! A resposta é bem direta. Este grafo 
+não respeita uma propriedade chamada \textit{conexidade}, 
+ou seja, é dito ser um \textit{grafo não conexo}.
+
+\index{conexidade} 
+\index{grafo não conexo}
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{11.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{11}
+\end{figure}
+
+{\Large Podemos `consertar' esse grafo?}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+{\Large Sim, podemos!} 
+
+Basta acrescentarmos um vértice conectando a parte interior 
+com a parte exterior como mostra a figura abaixo.
+
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{12.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{12}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\subsection{Gráfico Conexo}
+
+Um grafo é dito conexo se for possível estabelecer um 
+caminho de qualquer vértice para qualquer outro vértice.
+
+Podemos definir o grau de conexidade de um gráfico (k), 
+bastando remover um número k-1 de vértices, e perceber se 
+o grafo continua sendo conexo. 
+
+Para o nosso exemplo, o grau de conexidade é igual a 0. 
+Pois se retirarmos uma aresta, o grafo deixa de ser 
+conexo!
+
+\index{conexo}
+\index{conexidade}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage\subsection{Gráfico Planar}
+
+É aquele grafo que pode ser representado em um plano sem 
+qualquer interseção entre arestas. Até agora todos os 
+exemplos de grafos que estudamos são planares. Que tal
+vermos um exemplo de gráfico não planar?
+
+\begin{figure}[!ht]
+ \centering
+ \includegraphics[scale=0.5]{13.jpg}
+ \caption{Imagem de um grafo que possui V vértices (V), 
+ A arestas (A), e R regiões (R).}
+ \label{13}
+\end{figure}
+
+\index{planar}

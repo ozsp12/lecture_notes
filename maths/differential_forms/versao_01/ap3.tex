@@ -1,0 +1,84 @@
+\section{Diferenciabilidade}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Funções Diferenciáveis} 
+
+A noção de função diferenciável, é devido a Fréchet e Stolz. 
+Para $f:U\to\mathbb{R}$, com $U \subset \mathbb{R}^n$, e seja $a\in U$. A função $f$ é diferenciável no ponto $a$ quando existirem constantes $T_1, T_2,\ldots,T_n$, tais que para todo vetor $v = (\alpha_1,\ldots,\alpha_n) \in \mathbb{R}^n$, com $a+v\in U$, se tenha:
+%
+\[
+f(a+v) = f(a) + \sum_{i=1}^{n}T_i\alpha_i + r(v) 
+\ \ , \ \ 
+\lim_{v\to 0} \frac{r(v)}{|v|} = 0
+\]
+%
+Quando $f$ é diferenciável em todos os pontos de U, então $f$ é dita diferenciável. No caso particular em que $v = t e_i$, onde 
+$(e_i)_{i=1}^{n}$ é a base canônica do $\mathbb{R}^n$, e retomamos 
+a definição de derivada parcial, onde temos que $T_i$ é a derivada 
+parcial de $f$ no ponto $a$:
+%
+\[
+T_i = \frac{\partial f}{\partial x_i}(a) 
+= \lim_{t \to 0} \frac{f(a + te_i) - f(a)}{t}
+\]
+%
+Dizemos então que a função $f$ é diferenciável no ponto $a \in U$ 
+quando existirem as derivadas parciais $T_i(a) = \partial_{i}f(a)$, 
+para $i=1,\ldots,n$. E para todo vetor $v = (\alpha_1,\ldots,\alpha_n)$ tal que $a+v\in U$, tivermos:
+%
+\[
+f(a+v) = f(a) + \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}(a)
+\alpha_i + r(v) 
+\ \ , \ \ 
+\lim_{v\to 0} \frac{r(v)}{|v|} = 0
+\]
+%
+Onde $r(v)$ é o resto, e pode ser definido a partir da equação acima. 
+%
+\[
+r(v) = f(a+v) - f(a) 
+- \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}(a)\alpha_i
+\]
+%
+Essa definição é possível para qualquer função que possua derivadas parciais, sendo a principal condição a ser verificada quando for necessário provar que uma função é diferenciável. Devendo-se observar que o resultado $\lim_{v\to 0} \frac{r(v)}{|v|} = 0$ independe da norma utilizada. Mais a frente iremos discutir mais a fundo essa definição, mas já adiantando, o termo na somatória é nada mais do que o produto interno entre o gradiente da função $f$ no ponto $a$, e o vetor $v = (\alpha_1,\ldots,\alpha_n)$:
+%
+\[
+\langle \nabla f(a) , v \rangle 
+= \sum_{i=1}^{n}\frac{\partial f}{\partial x_i}(a)\alpha_i
+\]
+%
+Esse resultado evidencia o motivo pelo qual enfatizamos a necessidade da dependência linear com a direção na derivada. Isso é resultado da linearidade do produto interno $\langle , \rangle$:
+%
+\[
+\langle \nabla f(a) , tv + w \rangle 
+= t \langle \nabla f(a) , v \rangle + \langle \nabla f(a) , w \rangle
+\]
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Condição suficiente para diferenciabilidade} 
+
+Em resumo, vimos que uma função é diferenciável no ponto se suas derivadas parciais existirem nesse ponto. Entretanto, a existência das derivadas parciais não implica necessariamente que $f$ seja uma função diferenciável no ponto. Um exemplo disso é a função:
+%
+\[
+f(x,y) = \begin{cases} 
+	\frac{xy^2}{x^2 + y^4} &, \text{se} \ x^2 + y^2 \neq 0 \\ 
+	0                    &, \text{se} \  x = 0 \, y\neq 0 
+\end{cases}
+\]
+%
+Tomando o ponto $a$ como sendo a origem $(0,0)$, a função não é contínua nesse ponto, mas existem ambas derivadas parciais $\partial_x f(a)$ e $\partial_y f(a)$. 
+
+
+
+
+
+
+
+
+
+
+
+

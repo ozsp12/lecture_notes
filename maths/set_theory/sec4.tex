@@ -1,0 +1,117 @@
+\section{Princípio da Indução Finita}
+%\linespacedtitle
+\noindent
+Seja $P(n)$ uma propriedade qualquer, desejamos provar que dado um $n  \geq n_0$ \textit{para todo} $n \geq n_0 \in \mathbb{N}$ essa propriedade é válida. Para tal usa-se o \textit{Princípio da Indução Finita}. \\
+
+
+\noindent
+Se as condições abaixo verificam-se,\\
+
+\noindent
+\textit{(i)} $P(n_0)$ é válida; \\
+\textit{(ii)} $P(k) \Rightarrow P(k + 1)$; \\
+%\linespaced
+
+\noindent
+onde $P(k)$ é a hipótese. Então $P(n)$ é válida para todo $n \in \mathbb{N}$.\\
+
+\noindent
+Seja a soma abaixo,
+
+$$ 1 + 3 + 5 + \cdots + (2n - 1) = n^2 \qquad (n \in \mathbb{N^*})$$  
+
+\noindent
+Iniciemos tomando casos de $n$, 
+%\linespaced
+
+\noindent
+$n = 1 \; \Rightarrow \; 1 =  1^2$ \\
+$n = 2 \Rightarrow 1 + 3 = 4 = 2^2$ \\
+$n = 3 \Rightarrow 1 + 3 + 5 = 9 = 3^2$ \\
+$ \vdots $  \\
+
+%\linespaced
+\noindent
+Supondo ser verdade para $n = k$, provamos ser válido para $ n = k + 1$. \\
+
+\noindent
+$ \underbrace{ 1 + 3 + 5 + \dots + (2n - 1)}_{=n^2} + 2(n+ 1) - 1 = (n + 1)^2 $\\ \\
+$ \Rightarrow n^2 + 2(n+1) - 1 = (n+1)^2$ \\
+$ \Rightarrow n^2 + 2n + 2 - 1 = n^2 + 2n + 1 = (n + 1 )^2 $ \\ 
+
+\hspace*{0pt}\hfill \textit{C.Q.D}
+
+% Quebra de linha opcional ao formato do livro para colocar item na mesma página da demonstração.
+%\vspace{22mm}
+
+\noindent
+\text{\maltese} $ 2n \geq n + 1, \; \forall n \in \mathbb{N^*}$ 
+
+\begin{proof}
+	Para $n=1 \Rightarrow 2 \geq 2$ (OK) \\
+	
+	\noindent
+	Para $n = k + 1$ e supondo válido para $ n = k$ \\ \\
+	\noindent
+	$ 2(k + 1) = 2k + 2 \geq k + 1 + 1 $ \\
+	$ \Rightarrow 2k + 2 \geq k + 2$ \\
+\end{proof}
+
+%\linespaced
+\text{\maltese} $ 2^n > n $, $\forall n \in \mathbb{N^*}$ \\
+\begin{proof}
+\noindent
+Para $n=1 \Rightarrow \; 2 \; > \; 1$.
+
+\noindent
+Supondo válido para $n = k$ (hipótese), $ 2^k > k $. \\
+
+$$ 2^{k+1} = 2^k \cdot 2 > k + 1 $$ \\
+$$ \Rightarrow 2^k + 2^k > k + 1 $$ 
+\end{proof}
+
+%\linespaced
+\text{\maltese} $ 8 | (3^{2n} - 1), \; \forall n \in \mathbb{N^*} $ \\
+
+\begin{proof}
+Para $n = 1$ é verdadeiro.\\
+
+Supondo verdade para $n = k$ \\
+$$ 8|(3^{2k} - 1) $$ \\
+
+Para $ n = k + 1 $, \\
+$$ 8 | (3^{(2k+2)} - 1) \Rightarrow 8|(3^{2k} \cdot 3^2 - 1)$$ \\
+$$ \Rightarrow 8|(3^{2k} \cdot (8 + 1) - 1) $$ \\
+$$ \Rightarrow 8| ( 8 \cdot 3^{2k} + 3^{2k} - 1 ) $$ \\
+$$ \underbrace{8|(8 \cdot 3^{2k})}_{V} + \underbrace{8|(3^{2k} - 1 )}_{V} $$ \\
+
+logo $ 8|(3^{2n} - 1)$ é verdade.
+
+\end{proof}
+
+%\linespaced
+\text{\maltese} $ 2|n^2 + n $, $\forall n \in \mathbb{N^*}$ \\
+
+$n = 1 \Rightarrow 1^2 + 1 = 2 \Rightarrow 2|2$ \\
+
+Supondo verdade para $ n = k $ \\
+
+$$ 2|k^2 + k $$ \\
+
+Vamos mostrar que é verdade para $ n = k + 1 $.
+
+$$ (k + 1)^2 + (k + 1) = k^2 + 2k + 1 + k + 1 = $$ 
+
+$$ = \; k^2 + 3k + 2 = (k^2 + k) + 2k + 2 = $$ 
+
+$$ = \; (k^2 + k) + 2(k + 1)$$ 
+
+$ 2|k^2 + k $ por hipótese 
+
+$ 2|2(k + 1) $ por definição 
+
+$$ \Rightarrow 2 | (k + 1 )^2 + (k + 1) $$
+
+\begin{flushright}
+	\textit{C.Q.D} 
+\end{flushright}
