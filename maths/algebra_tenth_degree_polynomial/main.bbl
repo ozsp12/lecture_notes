@@ -1,0 +1,84 @@
+\begin{thebibliography}{10}
+
+\bibitem{barbeau1989}
+Edward~J. Barbeau.
+\newblock {\em Polynomials}.
+\newblock Problem Books in Mathematics. Springer, New York, 1989.
+\newblock \url{https://doi.org/10.1007/978-1-4612-4524-7}.
+
+\bibitem{andreescu2014}
+Titu Andreescu and Dorin Andrica.
+\newblock {\em Complex Numbers from {A} to ... {Z}}.
+\newblock Birkh{\"a}user, Boston, second edition, 2014.
+\newblock \url{https://doi.org/10.1007/978-0-8176-8415-0}.
+
+\bibitem{needham1997}
+Tristan Needham.
+\newblock {\em Visual Complex Analysis}.
+\newblock Oxford University Press, 1997.
+\newblock \url{https://doi.org/10.1093/oso/9780198534471.001.0001}.
+
+\bibitem{dummit2004}
+David~S. Dummit and Richard~M. Foote.
+\newblock {\em Abstract Algebra}.
+\newblock John Wiley \& Sons, Hoboken, NJ, third edition, 2004.
+
+\bibitem{hardywright2008}
+G.~H. Hardy and E.~M. Wright.
+\newblock {\em An Introduction to the Theory of Numbers}.
+\newblock Oxford University Press, sixth edition, 2008.
+\newblock Revised by D. R. Heath-Brown and J. H. Silverman;
+  \url{https://doi.org/10.1093/oso/9780199219858.001.0001}.
+
+\bibitem{irelandrosen1990}
+Kenneth Ireland and Michael Rosen.
+\newblock {\em A Classical Introduction to Modern Number Theory}, volume~84 of
+  {\em Graduate Texts in Mathematics}.
+\newblock Springer, second edition, 1990.
+\newblock \url{https://doi.org/10.1007/978-1-4757-2103-4}.
+
+\bibitem{washington1997}
+Lawrence~C. Washington.
+\newblock {\em Introduction to Cyclotomic Fields}, volume~83 of {\em Graduate
+  Texts in Mathematics}.
+\newblock Springer, New York, second edition, 1997.
+\newblock \url{https://doi.org/10.1007/978-1-4612-1934-7}.
+
+\bibitem{hartwig2023divisibility}
+Robert~E. Hartwig and Pedro Patr{\'i}cio.
+\newblock Divisibility of finite geometric series.
+\newblock {\em Bulletin of the Malaysian Mathematical Sciences Society},
+  46(5):161, 2023.
+\newblock \url{https://doi.org/10.1007/s40840-023-01556-5}.
+
+\bibitem{apostol1976}
+Tom~M. Apostol.
+\newblock {\em Introduction to Analytic Number Theory}.
+\newblock Undergraduate Texts in Mathematics. Springer, New York, 1976.
+\newblock \url{https://doi.org/10.1007/978-1-4757-5579-4}.
+
+\bibitem{dlmfchebyshev}
+{NIST Digital Library of Mathematical Functions}.
+\newblock \url{https://dlmf.nist.gov/}, Release 1.2.8 of 2026-09-15.
+\newblock F. W. J. Olver, A. B. Olde Daalhuis, D. W. Lozier, B. I. Schneider,
+  R. F. Boisvert, C. W. Clark, B. R. Miller, B. V. Saunders, H. S. Cohl, and M.
+  A. McClain, eds.; Sections 18.3 and 18.9.
+
+\bibitem{masonhandscomb2003}
+J.~C. Mason and D.~C. Handscomb.
+\newblock {\em Chebyshev Polynomials}.
+\newblock Chapman \& Hall/CRC, Boca Raton, 2003.
+\newblock \url{https://doi.org/10.1201/9781420036114}.
+
+\bibitem{lidl1993}
+Rudolf Lidl, Gary~L. Mullen, and G{\"u}nter Turnwald.
+\newblock {\em Dickson Polynomials}.
+\newblock Longman Scientific \& Technical, Harlow, 1993.
+
+\bibitem{hartwig2023gcd}
+Robert~E. Hartwig and Pedro Patr{\'i}cio.
+\newblock The {GCD} for finite geometric series.
+\newblock {\em Filomat}, 37(29):9973--9979, 2023.
+\newblock \url{https://doi.org/10.2298/FIL2329973H}.
+
+\end{thebibliography}
