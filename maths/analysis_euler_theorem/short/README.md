@@ -1,10 +1,18 @@
 # Euler–Liouville theorem: short note
 
-This directory contains a short, self-contained English translation and conservative editorial revision of the original Portuguese geometric derivation.
+This directory contains a self-contained English translation and conservative editorial revision of the original Portuguese geometric derivation, expanded with three worked mathematical examples.
 
-- `main.tex`: the **only active LaTeX source**. It does not depend on external `.tex` files.
-- `main.pdf`: compiled English short note (2 A4 pages).
-- `original/`: the three archived historical source files, kept unchanged for provenance.
+- `main.tex`: the **only active LaTeX source**, including the geometric argument and worked examples.
+- `main.pdf`: compiled English note (4 A4 pages).
+- `original/`: the three archived historical source files, unchanged.
+
+## Worked examples
+
+1. Compensating expansion and contraction: diagonal flow and rectangle area.
+2. Rotation and area preservation: skew-symmetric generator and rotation matrix.
+3. Time-dependent trace-free deformation: nonautonomous transition matrix `Phi(t,tau)`.
+
+The examples compare explicitly computed determinants with Liouville's volume formula. No physics applications are included.
 
 ## Build
 
@@ -12,4 +20,4 @@ This directory contains a short, self-contained English translation and conserva
 latexmk -pdf -halt-on-error -interaction=nonstopmode main.tex
 ```
 
-The original formulation is retained, including the transported-region integral, while mathematical corrections clarify the initial-time normalization, the absolute Jacobian determinant, and the Jacobi/Liouville terminology.
+The original transported-region derivation is preserved, with clarified matrix normalization, Jacobian signs, and terminology.

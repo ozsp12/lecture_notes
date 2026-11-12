@@ -6,6 +6,7 @@
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{microtype}
+\usepackage{needspace}
 \usepackage[a4paper,margin=22mm,headheight=14pt,headsep=10pt,footskip=16pt]{geometry}
 \usepackage{fancyhdr}
 \usepackage[hidelinks]{hyperref}
@@ -21,6 +22,8 @@
 \setlength{\belowdisplayshortskip}{5pt}
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{example}{Example}[section]
+\newenvironment{solution}{\par\noindent\textbf{Solution.}\ }{\par}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -47,7 +50,7 @@
 \vspace{-2.1em}
 
 \begin{abstract}
-This short note develops the geometric interpretation of a fundamental matrix of a linear ordinary differential system. A normalized matrix solution transports points and measurable regions of the state space; its determinant measures the resulting volume change. Jacobi's determinant identity and cyclicity of the trace then give Liouville's formula for the rate and accumulated factor of volume evolution.
+This short note develops the geometric interpretation of a fundamental matrix of a linear ordinary differential system. A normalized matrix solution transports points and measurable regions of the state space; its determinant measures the resulting volume change. Jacobi's determinant identity and cyclicity of the trace then give Liouville's formula for the rate and accumulated factor of volume evolution. Three worked matrix examples illustrate net area growth, area-preserving rotations, and time-dependent deformation.
 \end{abstract}
 
 \section{Geometric Interpretation}
@@ -149,6 +152,107 @@ provided $V(t_0)>0$. The determinant identity also holds when the initial region
 \end{theorem}
 
 The scalar differential equation in Eq.~\eqref{eq:volume-evolution} is solved by an integrating factor, or directly by integrating the logarithmic derivative for positive volume. The result shows that $\tr A(t)$ is the instantaneous logarithmic rate of volume change. A vanishing trace preserves volume, although it need not preserve the region's shape. For a non-normalized fundamental matrix $\widetilde U$, the same calculation applies to the state-transition matrix $\Phi(t,t_0)=\widetilde U(t)\widetilde U(t_0)^{-1}$.
+
+
+\section{Worked Examples}
+
+Liouville's formula is particularly useful when one wants to determine the change of area without describing every trajectory. The following examples use explicit $2\times2$ systems to compare the trace-based prediction with the determinant of the complete transition matrix. Each system is linear, so the predicted factor applies to every measurable initial region of positive area, regardless of its size or shape.
+
+\Needspace{14\baselineskip}
+\subsection{Compensating Expansion and Contraction}
+
+A diagonal generator separates deformation into independent coordinate directions. The first example illustrates that a region may expand in one direction and contract in another while its total area grows. The combined rate is fixed by the sum of the two diagonal entries.
+
+\begin{example}[Unequal coordinate rates]
+Consider the system, normalized at $t_0=0$,
+\begin{equation}
+\mathbf{x}'(t)=
+\begin{pmatrix}2&0\\0&-1\end{pmatrix}\mathbf{x}(t),
+\qquad \Phi(0,0)=I_2.
+\label{eq:ex-growth-generator}
+\end{equation}
+Determine the transition matrix and the area of a transported rectangle.
+\end{example}
+
+\begin{solution}
+The components obey $x_1'=2x_1$ and $x_2'=-x_2$, and therefore evolve as $x_1(t)=e^{2t}x_1(0)$ and $x_2(t)=e^{-t}x_2(0)$. Applying these solutions to the canonical basis gives
+\begin{equation}
+\Phi(t,0)=
+\begin{pmatrix}e^{2t}&0\\0&e^{-t}\end{pmatrix},
+\qquad \det\Phi(t,0)=e^t.
+\label{eq:ex-growth-phi}
+\end{equation}
+Independently, the generator has trace $2-1=1$, so Eq.~\eqref{eq:liouville} predicts the same result: $\det\Phi(t,0)=\exp(\int_0^t1\,\dd s)=e^t$. For the initial rectangle $\Omega_0=[0,2]\times[0,1]$, the evolved side lengths are $2e^{2t}$ and $e^{-t}$. Thus
+\begin{equation}
+V(t)=2e^{2t}e^{-t}=2e^t,
+\qquad V(\ln2)=4=2V(0).
+\label{eq:ex-growth-area}
+\end{equation}
+At $t=\ln2$, the initial width has become $8$ and the height has become $1/2$. The area doubles even though one side contracts, because Liouville's formula combines the two directional factors.
+\end{solution}
+
+\subsection{Rotation and Area Preservation}
+
+Volume preservation does not require a stationary region. A skew-symmetric planar generator rotates vectors while preserving their lengths. Its trace vanishes, so Liouville's formula determines the area before the trigonometric form of the motion is calculated.
+
+\begin{example}[Planar rotation]
+For a constant angular rate $\omega\in\R$, consider
+\begin{equation}
+\mathbf{x}'(t)=
+\begin{pmatrix}0&-\omega\\\omega&0\end{pmatrix}\mathbf{x}(t),
+\qquad \Phi(0,0)=I_2.
+\label{eq:ex-rotation-generator}
+\end{equation}
+Show that the system preserves the area of every transported region.
+\end{example}
+
+\begin{solution}
+The generator has zero diagonal entries and therefore zero trace. Liouville's formula immediately gives $\det\Phi(t,0)=1$. To verify this prediction, solve the system or exponentiate its generator to obtain
+\begin{equation}
+\Phi(t,0)=
+\begin{pmatrix}
+\cos(\omega t)&-\sin(\omega t)\\
+\sin(\omega t)&\cos(\omega t)
+\end{pmatrix}.
+\label{eq:ex-rotation-phi}
+\end{equation}
+Its determinant is $\cos^2(\omega t)+\sin^2(\omega t)=1$. Consequently, $V(t)=V(0)$ for any measurable region $\Omega_0$. For example, when $\omega=1$, a quarter-turn at $t=\pi/2$ carries the initial rectangle into a rotated rectangle of precisely the same area. The flow rotates the region without reversing its orientation or changing its area.
+\end{solution}
+
+\subsection{Time-Dependent Trace-Free Deformation}
+
+The last example illustrates a nonautonomous system, in which the deformation from an initial time $\tau$ to a final time $t$ depends on both times separately. Despite the changing directional rates, the trace remains zero and the two stretching factors remain reciprocal.
+
+\begin{example}[Nonautonomous diagonal flow]
+Consider the time-dependent system
+\begin{equation}
+\mathbf{x}'(t)=
+\begin{pmatrix}t&0\\0&-t\end{pmatrix}\mathbf{x}(t).
+\label{eq:ex-time-generator}
+\end{equation}
+Find $\Phi(t,\tau)$ for arbitrary reference time $\tau$, and verify the volume prediction.
+\end{example}
+
+\begin{solution}
+The first coordinate satisfies $x_1'=t x_1$, so integration between $\tau$ and $t$ gives the factor $\exp[(t^2-\tau^2)/2]$. The second coordinate satisfies $x_2'=-t x_2$ and acquires its reciprocal factor. Hence
+\begin{equation}
+\Phi(t,\tau)=
+\begin{pmatrix}
+\exp\!\left[\dfrac{t^2-\tau^2}{2}\right]&0\\
+0&\exp\!\left[-\dfrac{t^2-\tau^2}{2}\right]
+\end{pmatrix}.
+\label{eq:ex-time-phi}
+\end{equation}
+The matrix equals $I_2$ when $t=\tau$, and $\Phi(t,\tau)^{-1}=\Phi(\tau,t)$. Its dependence on $t^2-\tau^2$ shows why the two-time notation is needed: the deformation is generally not a function of elapsed time alone. Since $\tr A(t)=t-t=0$, Liouville's formula gives
+\begin{equation}
+\det\Phi(t,\tau)=
+\exp\left(\int_{\tau}^{t}0\,\dd s\right)=1.
+\label{eq:ex-time-area}
+\end{equation}
+Thus any initial region retains its area, even though its shape can change considerably. For example, between $\tau=0$ and $t=1$, the two coordinate factors are $e^{1/2}$ and $e^{-1/2}$, whose product is unity.
+\end{solution}
+
+The examples distinguish the information given by a determinant from that contained in the full transition matrix. The trace determines the net area factor without specifying rotation or the separate stretching rates; the full matrix supplies those additional details.
 
 \begin{thebibliography}{9}
 \bibitem{coddington} E. A. Coddington and N. Levinson, \emph{Theory of Ordinary Differential Equations}, McGraw--Hill, New York (1955).
