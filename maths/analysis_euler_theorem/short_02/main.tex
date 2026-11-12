@@ -1,0 +1,407 @@
+% Self-contained article: text, TikZ figure, and bibliography are included.
+% Compile with pdflatex main.tex twice; no BibTeX step is required.
+\documentclass[a4paper,11pt]{article}
+
+% Encoding, language, and standard article typography.
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=25mm,headheight=14pt,headsep=8mm,footskip=12mm]{geometry}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\usepackage{caption}
+\captionsetup{font=small,labelfont=bf,justification=justified,singlelinecheck=false}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xurl}
+\definecolor{linkblue}{RGB}{20,64,136}
+\definecolor{figureblue}{RGB}{38,99,145}
+\usepackage[colorlinks=true,linkcolor=linkblue,citecolor=linkblue,urlcolor=linkblue]{hyperref}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{doi:\,\nolinkurl{#1}}}
+\renewcommand{\bibfont}{\small}
+\setlength{\bibsep}{4pt}
+
+% Author information: edit these macros to reuse the template.
+\newcommand{\AuthorName}{Osvaldo L. Santos-Pereira}
+\newcommand{\AuthorAffiliation}{Physics Institute of Universidade Federal do Rio de Janeiro (UFRJ)}
+\newcommand{\AuthorORCID}{0000-0003-2231-517X}
+\newcommand{\AuthorEmail}{olsp@if.ufrj.br}
+\newcommand{\AuthorFootnote}{%
+  ORCID: \href{https://orcid.org/\AuthorORCID}{\AuthorORCID}.\enspace
+  E-mail: \href{mailto:\AuthorEmail}{\AuthorEmail}.}
+
+% Mathematical notation.
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\mathop{}\!\mathrm{d}}
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+\DeclareMathOperator{\tr}{tr}
+\numberwithin{equation}{section}
+\newtheorem{theorem}{Theorem}[section]
+
+% Page layout: restrained running header and centered page number.
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Liouville's formula}
+\fancyhead[R]{\small\itshape Linear differential systems}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+  \renewcommand{\footrulewidth}{0.4pt}}
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+\title{A Geometric Interpretation\\of Liouville's Formula}
+\author{\AuthorName\thanks{\AuthorFootnote}\\[0.45em]
+  \small\AuthorAffiliation}
+\date{}
+\hypersetup{pdftitle={A Geometric Interpretation of Liouville's Formula},
+  pdfauthor={Osvaldo L. Santos-Pereira},
+  pdfsubject={Undergraduate lecture note on linear systems and volume change}}
+
+\begin{document}
+\maketitle
+
+\noindent
+The solutions of a linear differential system define a family of linear
+transformations of the space of initial conditions. This note explains how
+the determinant of the fundamental matrix measures the resulting change in
+volume and why its rate of change is governed by the trace of the coefficient
+matrix. An elementary derivation of Liouville's formula is followed by a
+geometric interpretation and two planar examples. The prerequisites are
+basic linear algebra, multivariable calculus, and first-order differential
+equations.
+
+\section{Introduction}
+\label{sec:introduction}
+
+A differential equation describes the motion of an individual point once an
+initial condition has been chosen. It also describes the motion of an entire
+region when all its points are allowed to evolve according to the same
+equation. For a linear system, this motion is determined by a matrix, so the
+geometric effect can be studied using determinants. The question addressed
+here is how the volume of a region changes as it moves under the system.
+
+The relevant result is usually called \emph{Liouville's formula}, and is also
+known as Abel's identity in the theory of linear differential
+equations~\cite[Sec.~3.4]{Teschl2012}. It relates the determinant of a
+fundamental matrix to the trace of the matrix defining the system. The
+derivation below follows the geometric route: first describe the evolving
+region, then apply the change-of-variables formula, and finally differentiate
+the determinant using Jacobi's formula~\cite[p.~1]{Kahan1998}. All arguments
+remain within the setting of real linear systems.
+
+\section{Linear systems and evolving regions}
+\label{sec:linear}
+
+We begin by relating the solutions of a linear system to a transformation
+of its initial conditions. This requires fixing the initial time and choosing
+the normalization of the fundamental matrix explicitly.
+
+Let $I\subseteq\R$ be an interval, let $t_0\in I$, and let $A(t)$ be a real
+$n\times n$ matrix whose entries are continuous on $I$. The state
+$\vect{x}(t)\in\R^n$ satisfies the initial-value problem
+\begin{equation}
+  \frac{\dd\vect{x}}{\dd t}=A(t)\vect{x}(t),
+  \qquad \vect{x}(t_0)=\vect{x}_0.
+  \label{eq:system}
+\end{equation}
+The existence and uniqueness theorem for linear systems guarantees a unique
+solution on $I$ for each initial vector $\vect{x}_0$~\cite[Sec.~3.4]{Teschl2012}.
+A fundamental matrix has linearly independent solution vectors as its
+columns. Writing $I_n$ for the identity matrix, we choose the normalized
+fundamental matrix $U(t)$ defined by
+\begin{equation}
+  U'(t)=A(t)U(t),
+  \qquad U(t_0)=I_n,
+  \label{eq:fundamental}
+\end{equation}
+Its columns are the solutions starting
+from the standard basis vectors. Linearity then gives the solution with
+arbitrary initial data as
+\begin{equation}
+  \vect{x}(t)=U(t)\vect{x}_0.
+  \label{eq:solution}
+\end{equation}
+The condition $U(t_0)=I_n$ is what makes $\vect{x}_0$ the actual initial
+position in Eq.\,\eqref{eq:solution}. For an unnormalized fundamental matrix
+$Y(t)$, the corresponding expression would be
+$\vect{x}(t)=Y(t)Y(t_0)^{-1}\vect{x}_0$.
+
+The matrix $U(t)$ is invertible at every time in $I$. Indeed, if
+$U(t_*)\vect{c}=\vect{0}$ for some $t_*\in I$, the solution
+$U(t)\vect{c}$ passes through the origin at $t_*$. Uniqueness implies that
+this is the zero solution throughout $I$, and evaluation at $t_0$ gives
+$\vect{c}=\vect{0}$. Thus $U(t)$ has a trivial kernel. Its determinant is
+continuous and never vanishes; since $\det U(t_0)=1$, it is positive
+throughout $I$.
+
+At a fixed time, the velocity field is $\vect{v}(t,\vect{x})=A(t)\vect{x}$.
+Along a solution, its value is $A(t)U(t)\vect{x}_0$, which equals the tangent
+vector $\vect{x}'(t)$. If $A$ is constant, this field is independent of time.
+The map in Eq.\,\eqref{eq:solution} is a linear deformation of the space of
+initial conditions. It fixes the origin and can stretch, compress, rotate,
+or shear a region.
+
+Let $\Omega_0\subset\R^n$ be a bounded region with a piecewise smooth boundary
+and positive volume. Its image at time $t$ and its volume are denoted by
+\begin{equation}
+  \Omega_t=U(t)\Omega_0,
+  \qquad V(t)=\int_{\Omega_t}\dd^n\vect{x},
+  \qquad V_0=V(t_0),
+  \label{eq:region}
+\end{equation}
+where $\dd^n\vect{x}=\dd x_1\cdots\dd x_n$ is the usual volume element.
+For $n=2$, the word volume refers to area. The Jacobian matrix of the map
+$\vect{x}_0\mapsto U(t)\vect{x}_0$ is $U(t)$ itself. Hence the
+change-of-variables formula gives
+\begin{equation}
+  \begin{aligned}
+    V(t)
+    &=\int_{\Omega_0}|\det U(t)|\,\dd^n\vect{x}_0\\
+    &=\det U(t)\,V_0.
+  \end{aligned}
+  \label{eq:volume-determinant}
+\end{equation}
+The absolute value is required in the change-of-variables formula. It can
+be removed here because the normalized fundamental matrix has positive
+determinant. Since $U(t)$ does not depend on the initial point, its
+determinant is the same volume factor everywhere in the region.
+
+\section{Liouville's formula}
+\label{sec:liouville}
+
+Equation\,\eqref{eq:volume-determinant} reduces the volume problem to a
+scalar quantity. We write $\varphi(t)=\det U(t)$ and derive a differential
+equation for $\varphi$. The matrix operation that appears in this equation
+is the trace. For an $n\times n$ matrix $B=(b_{ij})$, it is defined by
+\begin{equation}
+  \tr B=\sum_{i=1}^{n}b_{ii}.
+  \label{eq:trace}
+\end{equation}
+For two $n\times n$ matrices $B$ and $C$, summing their diagonal entries
+shows that $\tr(BC)=\sum_{i,j}b_{ij}c_{ji}=\tr(CB)$. This is the cyclic
+property of the trace; it does not assert that $BC=CB$.
+
+To differentiate $\varphi$, let $C_{ij}(t)$ denote the cofactor of the entry
+$U_{ij}(t)$. Cofactor expansion gives
+$\partial(\det U)/\partial U_{ij}=C_{ij}$, while the inverse-matrix formula
+gives $C_{ij}=\det U\,(U^{-1})_{ji}$. Applying the chain rule therefore yields
+\begin{equation}
+  \begin{aligned}
+    \varphi'(t)
+    &=\sum_{i,j=1}^{n}C_{ij}(t)U'_{ij}(t)\\
+    &=\varphi(t)\sum_{i,j=1}^{n}(U(t)^{-1})_{ji}U'_{ij}(t)\\
+    &=\varphi(t)\,\tr\!\left(U(t)^{-1}U'(t)\right).
+  \end{aligned}
+  \label{eq:jacobi}
+\end{equation}
+This identity is Jacobi's formula~\cite[p.~1]{Kahan1998}. The preceding
+invertibility argument justifies the use of $U(t)^{-1}$.
+
+Substituting $U'=AU$ from Eq.\,\eqref{eq:fundamental} makes the differential
+equation for the determinant explicit. The cyclic property gives
+$\tr(U^{-1}AU)=\tr(AUU^{-1})=\tr A$, so Eq.\,\eqref{eq:jacobi} becomes
+\begin{equation}
+  \varphi'(t)=\tr A(t)\,\varphi(t),
+  \qquad \varphi(t_0)=1.
+  \label{eq:scalar-determinant}
+\end{equation}
+Because $\varphi(t)>0$, we may divide by it and integrate. This gives
+\begin{equation}
+  \log\varphi(t)-\log\varphi(t_0)
+  =\int_{t_0}^{t}\tr A(s)\,\dd s.
+  \label{eq:log-determinant}
+\end{equation}
+Exponentiating and recalling Eq.\,\eqref{eq:volume-determinant} completes
+the derivation. We state the result with both its matrix and geometric forms.
+
+\begin{theorem}[Liouville's formula]
+\label{thm:liouville}
+Let $A:I\to\R^{n\times n}$ be continuous, and let $U$ satisfy
+Eq.\,\eqref{eq:fundamental}. Then, for every $t\in I$,
+\begin{equation}
+  \det U(t)=\exp\!\left(\int_{t_0}^{t}\tr A(s)\,\dd s\right).
+  \label{eq:liouville}
+\end{equation}
+For the evolving region in Eq.\,\eqref{eq:region}, the volume consequently
+satisfies
+\begin{subequations}\label{eq:volume-law}
+\begin{align}
+  V'(t)&=\tr A(t)\,V(t),\label{eq:volume-rate}\\
+  V(t)&=V_0\exp\!\left(\int_{t_0}^{t}\tr A(s)\,\dd s\right).
+  \label{eq:volume-integrated}
+\end{align}
+\end{subequations}
+\end{theorem}
+
+Thus the volume can be determined from the trace without finding every
+entry of the fundamental matrix. For a constant matrix $A$, the integral
+reduces to $(t-t_0)\tr A$. The same derivation covers continuous
+time-dependent matrices.
+
+\section{Geometric meaning of the trace}
+\label{sec:geometry}
+
+The trace has a direct interpretation as the instantaneous relative rate
+of volume change. This follows by dividing Eq.\,\eqref{eq:volume-rate}
+by the positive quantity $V(t)$. A positive trace gives increasing volume
+at that time, and a negative trace gives decreasing volume. If
+$\tr A(t)=0$ for every $t\in I$, every evolving region preserves its
+volume. Conversely, if a region of positive volume has constant volume
+throughout $I$, Eq.\,\eqref{eq:volume-rate} implies that the trace vanishes
+throughout $I$.
+
+The same quantity appears in elementary vector calculus. If
+$A(t)=(a_{ij}(t))$, the components of the velocity field are
+$v_i(t,\vect{x})=\sum_{j=1}^{n}a_{ij}(t)x_j$. Its divergence, defined as
+the sum of the derivatives of each component with respect to the matching
+coordinate, is
+\begin{equation}
+  \nabla_{\vect{x}}\!\cdot\vect{v}(t,\vect{x})
+  =\sum_{i=1}^{n}\frac{\partial v_i}{\partial x_i}
+  =\sum_{i=1}^{n}a_{ii}(t)
+  =\tr A(t).
+  \label{eq:divergence}
+\end{equation}
+For this linear field, the divergence is spatially uniform, so the same
+relative volume change occurs throughout the region. A zero trace at a
+single instant only makes the volume derivative vanish at that instant;
+volume preservation over an interval requires it to vanish throughout the
+interval. Volume preservation allows lengths and angles to change, as the
+following examples demonstrate.
+
+\section{Two elementary examples}
+\label{sec:examples}
+
+Planar systems make the determinant visible as an area factor. We set
+$t_0=0$ and use the unit square $\Omega_0=[0,1]^2$ as the initial region.
+The first example allows independent changes along the coordinate axes;
+the second gives a shear. Both can be solved by direct integration.
+
+\subsection{Expansion and compression}
+\label{sec:diagonal}
+
+Let $a$ and $b$ be real constants and consider the equations $x'=ax$ and
+$y'=by$. The coefficient matrix and the normalized fundamental matrix are
+\begin{equation}
+  A=\begin{pmatrix}a&0\\0&b\end{pmatrix},
+  \qquad U(t)=\begin{pmatrix}e^{at}&0\\0&e^{bt}\end{pmatrix}.
+  \label{eq:diagonal}
+\end{equation}
+The unit square becomes a rectangle with side lengths $e^{at}$ and
+$e^{bt}$. Its area is therefore
+\begin{equation}
+  V(t)=e^{(a+b)t},
+  \qquad \tr A=a+b.
+  \label{eq:diagonal-area}
+\end{equation}
+This agrees with Eq.\,\eqref{eq:volume-integrated}. The area increases
+when $a+b>0$, decreases when $a+b<0$, and remains constant when $a+b=0$.
+For the choice $a=1$ and $b=-1$, expansion along the horizontal direction
+exactly compensates compression along the vertical direction. At
+$t=\log 2$, the sides have lengths $2$ and $1/2$, so the area remains
+equal to one. Figure~\ref{fig:deformations}(a) shows this deformation.
+
+\subsection{Shear with constant area}
+\label{sec:shear}
+
+Let $k$ be a real constant and consider $x'=ky$ and $y'=0$. Since the
+vertical coordinate stays fixed, direct integration gives
+$y(t)=y_0$ and $x(t)=x_0+kty_0$. In matrix form,
+\begin{equation}
+  A=\begin{pmatrix}0&k\\0&0\end{pmatrix},
+  \qquad U(t)=\begin{pmatrix}1&kt\\0&1\end{pmatrix}.
+  \label{eq:shear}
+\end{equation}
+Here $\tr A=0$ and $\det U(t)=1$, so the area is constant. The square
+becomes a parallelogram whose vertices are $(0,0)$, $(1,0)$,
+$(1+kt,1)$, and $(kt,1)$. Its base and height both have length one,
+although its sloping sides change length. Figure~\ref{fig:deformations}(b)
+shows the case $kt=1$.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=1.85cm,y=1.85cm,>=Stealth,font=\small]
+    \begin{scope}
+      \path[use as bounding box] (-.35,-.55) rectangle (2.65,1.6);
+      \fill[figureblue!12] (0,0) rectangle (2,.5);
+      \draw[figureblue,line width=.9pt] (0,0) rectangle (2,.5);
+      \draw[gray!80,densely dashed,line width=.8pt]
+        (0,0) rectangle (1,1);
+      \draw[->,black!70] (-.2,0)--(2.4,0) node[right] {$x$};
+      \draw[->,black!70] (0,-.18)--(0,1.35) node[above] {$y$};
+      \node[below left] at (0,0) {$0$};
+      \foreach \x in {1,2}{\draw (\x,.035)--(\x,-.035) node[below] {$\x$};}
+      \draw (.035,1)--(-.035,1) node[left] {$1$};
+      \draw (.035,.5)--(-.035,.5) node[left] {$\tfrac12$};
+      \node[figureblue] at (1.55,.25) {$\Omega_t$};
+      \node[gray!80] at (.55,.78) {$\Omega_0$};
+      \node[align=center] at (1.1,-.48) {\textbf{(a)} Expansion and compression};
+    \end{scope}
+    \begin{scope}[xshift=7.35cm]
+      \path[use as bounding box] (-.35,-.55) rectangle (2.65,1.6);
+      \fill[figureblue!12] (0,0)--(1,0)--(2,1)--(1,1)--cycle;
+      \draw[figureblue,line width=.9pt] (0,0)--(1,0)--(2,1)--(1,1)--cycle;
+      \draw[gray!80,densely dashed,line width=.8pt]
+        (0,0) rectangle (1,1);
+      \draw[->,black!70] (-.2,0)--(2.4,0) node[right] {$x$};
+      \draw[->,black!70] (0,-.18)--(0,1.35) node[above] {$y$};
+      \node[below left] at (0,0) {$0$};
+      \foreach \x in {1,2}{\draw (\x,.035)--(\x,-.035) node[below] {$\x$};}
+      \draw (.035,1)--(-.035,1) node[left] {$1$};
+      \node[figureblue] at (1.4,.65) {$\Omega_t$};
+      \node[gray!80] at (.4,.78) {$\Omega_0$};
+      \node[align=center] at (1.1,-.48) {\textbf{(b)} Shear};
+    \end{scope}
+  \end{tikzpicture}
+  \caption{Two deformations of the unit square. The dashed outline is
+  the initial region $\Omega_0$ and the shaded region is its image
+  $\Omega_t$. In (a), $U=\operatorname{diag}(2,1/2)$; in (b),
+  $U=\left(\begin{smallmatrix}1&1\\0&1\end{smallmatrix}\right)$.
+  Both matrices have determinant one, so both images have unit area.
+  The coordinate scales are identical in the two panels.}
+  \label{fig:deformations}
+\end{figure}
+
+These examples illustrate the two roles of the matrices in the argument.
+The fundamental matrix $U(t)$ determines the full deformation, and its
+determinant gives the resulting volume factor. The coefficient matrix
+$A(t)$ determines the instantaneous velocity field, and its trace gives
+the relative rate at which that volume changes.
+
+\begin{thebibliography}{2}
+
+\bibitem[Teschl(2012)]{Teschl2012}
+Gerald Teschl.
+\newblock \emph{Ordinary Differential Equations and Dynamical Systems}, volume
+  140 of \emph{Graduate Studies in Mathematics}.
+\newblock American Mathematical Society, Providence, RI, 2012.
+\newblock ISBN 978-0-8218-8328-0.
+\newblock \doi{10.1090/gsm/140}.
+\newblock URL \url{https://www.mat.univie.ac.at/~gerald/ftp/book-ode/ode.pdf}.
+
+\bibitem[Kahan(1998)]{Kahan1998}
+William Kahan.
+\newblock {Jacobi}'s formula for the derivative of a determinant.
+\newblock Lecture notes for Math H110, University of California, Berkeley,
+  October 1998.
+\newblock URL
+  \url{https://people.eecs.berkeley.edu/~wkahan/MathH110/jacobi.pdf}.
+\newblock 26 October 1998.
+
+\end{thebibliography}
+\end{document}
