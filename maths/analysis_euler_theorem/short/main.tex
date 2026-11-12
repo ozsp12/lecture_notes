@@ -1,0 +1,158 @@
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{microtype}
+\usepackage[a4paper,margin=22mm,headheight=14pt,headsep=10pt,footskip=16pt]{geometry}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\dd}{\mathrm{d}}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Vol}{Vol}
+\numberwithin{equation}{section}
+\setlength{\abovedisplayskip}{7pt}
+\setlength{\belowdisplayskip}{7pt}
+\setlength{\abovedisplayshortskip}{4pt}
+\setlength{\belowdisplayshortskip}{5pt}
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\itshape Geometric interpretation of Liouville's formula}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0.4pt}%
+  \renewcommand{\footrulewidth}{0.4pt}%
+}
+
+\title{\vspace{-1.5em}\textbf{A Geometric Interpretation of Liouville's Formula}}
+\author{Osvaldo L. Santos-Pereira\\[-1pt]
+\small \href{mailto:olsp@if.ufrj.br}{olsp@if.ufrj.br}\quad\textbullet\quad
+\href{https://orcid.org/0000-0003-2231-517X}{ORCID: 0000-0003-2231-517X}\\[2pt]
+\small Physics Institute, Universidade Federal do Rio de Janeiro (UFRJ), Brazil}
+\date{}
+
+\begin{document}
+\maketitle
+\vspace{-2.1em}
+
+\begin{abstract}
+This short note develops the geometric interpretation of a fundamental matrix of a linear ordinary differential system. A normalized matrix solution transports points and measurable regions of the state space; its determinant measures the resulting volume change. Jacobi's determinant identity and cyclicity of the trace then give Liouville's formula for the rate and accumulated factor of volume evolution.
+\end{abstract}
+
+\section{Geometric Interpretation}
+
+The purpose of the construction is to relate the differential equation governing individual trajectories to the deformation of a region of the state space. A fundamental matrix describes the finite-time motion, its Jacobian measures the volume factor, and the trace of the coefficient matrix determines the instantaneous rate of that factor. The argument starts with the flow of points, proceeds to a change of variables for transported regions, and concludes with Liouville's formula.
+
+\subsection{Fundamental Matrix and Trajectories}
+
+Consider the linear vector differential system
+\begin{equation}
+\frac{\dd\mathbf{u}}{\dd t}=A(t)\mathbf{u},\qquad
+\mathbf{u}(t)\in\R^n,
+\label{eq:linear-system}
+\end{equation}
+where $A:I\to\R^{n\times n}$ is continuous on an interval $I$ containing the reference time $t_0$. Let $U:I\to GL(n,\R)$ be a fundamental matrix, so that $U'(t)=A(t)U(t)$. We choose the normalization $U(t_0)=I_n$, which ensures that the vector multiplying $U(t)$ is the prescribed initial position. The solution starting at $\mathbf{x}_0\in\R^n$ is therefore
+\begin{equation}
+\mathbf{u}(t)=U(t)\mathbf{x}_0,\qquad \mathbf{u}(t_0)=\mathbf{x}_0.
+\label{eq:trajectory}
+\end{equation}
+
+For each fixed time, the invertible map $\mathbf{x}_0\mapsto U(t)\mathbf{x}_0$ deforms the state space. As time varies, each point follows a trajectory. Differentiating this trajectory while keeping its initial condition fixed yields the velocity along the motion:
+\begin{equation}
+\frac{\dd\mathbf{u}}{\dd t}
+=\frac{\dd U}{\dd t}\mathbf{x}_0
+=A(t)U(t)\mathbf{x}_0
+=A(t)\mathbf{u}(t).
+\label{eq:velocity}
+\end{equation}
+
+Thus $\mathbf{v}(t,\mathbf{x})=A(t)\mathbf{x}$ defines a time-dependent vector field on $\R^n$, and the trajectory $U(t)\mathbf{x}_0$ is tangent to this field at every point. If $A$ is constant, the vector field does not depend explicitly on time, although its value still varies with position. The deformation may include rotation, shear, expansion, or contraction; because the map is linear and fixes the origin, it is not generally a translation.
+
+\subsection{Transported Regions and the Jacobian}
+
+The same transformation that moves one initial point also carries an entire region into a deformed region. Let $\Omega_0\subset\R^n$ be a bounded measurable set at $t_0$, and denote its image by $\Omega_t=U(t)\Omega_0$. Its $n$-dimensional volume is defined by
+\begin{equation}
+V(t)=\Vol(\Omega_t)=\int_{\Omega_t}\dd^n x.
+\label{eq:volume-definition}
+\end{equation}
+
+To express this volume on the fixed reference region, perform the change of variables $\mathbf{x}=U(t)\mathbf{x}_0$. Because the transformation is linear in $\mathbf{x}_0$, its Jacobian matrix is precisely $U(t)$, and the change-of-variables theorem gives
+\begin{equation}
+V(t)=\int_{\Omega_0}
+\left|\det\!\left(\frac{\partial\mathbf{x}}{\partial\mathbf{x}_0}\right)\right|
+\dd^n x_0
+=\int_{\Omega_0}|\det U(t)|\,\dd^n x_0.
+\label{eq:change-of-variables}
+\end{equation}
+
+Define the scalar function $\varphi(t)=\det U(t)$. Since $U(t)$ is invertible, its determinant never vanishes. The normalization $\det U(t_0)=1$, together with continuity, makes $\varphi(t)$ positive throughout the interval. Hence the absolute value may be omitted, and the transported volume becomes
+\begin{equation}
+V(t)=\int_{\Omega_0}\varphi(t)\,\dd^n x_0
+=\varphi(t)\,V(t_0).
+\label{eq:volume-factor}
+\end{equation}
+
+The integral is taken over the fixed domain $\Omega_0$, while $\varphi(t)$ depends on time alone. Differentiating the preceding expression, equivalently differentiating under this fixed-domain integral, gives
+\begin{equation}
+\frac{\dd V}{\dd t}
+=\int_{\Omega_0}\frac{\dd\varphi}{\dd t}\,\dd^n x_0
+=\varphi'(t)V(t_0).
+\label{eq:volume-derivative}
+\end{equation}
+
+\subsection{Jacobi's Identity and Liouville's Formula}
+
+The remaining step is to differentiate the determinant of the fundamental matrix. For a differentiable invertible matrix $U(t)$, Jacobi's formula states that
+\begin{equation}
+\frac{\dd\varphi}{\dd t}
+=\varphi(t)\,\tr\!\left(U^{-1}(t)\frac{\dd U}{\dd t}\right),
+\qquad \varphi(t)=\det U(t).
+\label{eq:jacobi}
+\end{equation}
+
+Here $\tr B=\sum_{k=1}^{n}B_{kk}$ denotes the trace of a square matrix $B$. For the fundamental matrix, the differential equation $U'=AU$ reduces Jacobi's identity to
+\begin{equation}
+\varphi'(t)=\varphi(t)\tr\!\left(U^{-1}(t)A(t)U(t)\right).
+\label{eq:jacobi-application}
+\end{equation}
+
+The trace is invariant under similarity transformations, as follows from the cyclic property $\tr(BC)=\tr(CB)$. In particular,
+\begin{equation}
+\tr\!\left(U^{-1}AU\right)=\tr\!\left(AUU^{-1}\right)=\tr A,
+\label{eq:trace-similarity}
+\end{equation}
+so the determinant satisfies the scalar differential equation $\varphi'(t)=\tr A(t)\,\varphi(t)$. Substitution into Eq.~\eqref{eq:volume-derivative}, followed by Eq.~\eqref{eq:volume-factor}, now closes the geometric calculation:
+\begin{equation}
+\frac{\dd V}{\dd t}=\tr A(t)\,V(t).
+\label{eq:volume-evolution}
+\end{equation}
+
+\begin{theorem}[Liouville's volume formula]
+Under the assumptions above, the volume of the transported region and the determinant of the normalized fundamental matrix satisfy
+\begin{equation}
+\frac{V(t)}{V(t_0)}=\det U(t)
+=\exp\!\left(\int_{t_0}^{t}\tr A(s)\,\dd s\right),
+\label{eq:liouville}
+\end{equation}
+provided $V(t_0)>0$. The determinant identity also holds when the initial region has zero volume.
+\end{theorem}
+
+The scalar differential equation in Eq.~\eqref{eq:volume-evolution} is solved by an integrating factor, or directly by integrating the logarithmic derivative for positive volume. The result shows that $\tr A(t)$ is the instantaneous logarithmic rate of volume change. A vanishing trace preserves volume, although it need not preserve the region's shape. For a non-normalized fundamental matrix $\widetilde U$, the same calculation applies to the state-transition matrix $\Phi(t,t_0)=\widetilde U(t)\widetilde U(t_0)^{-1}$.
+
+\begin{thebibliography}{9}
+\bibitem{coddington} E. A. Coddington and N. Levinson, \emph{Theory of Ordinary Differential Equations}, McGraw--Hill, New York (1955).
+\bibitem{horn} R. A. Horn and C. R. Johnson, \emph{Matrix Analysis}, 2nd ed., Cambridge University Press, Cambridge (2013).
+\bibitem{apostol} T. M. Apostol, \emph{Calculus, Vol. II}, 2nd ed., Wiley, New York (1969).
+\end{thebibliography}
+\end{document}

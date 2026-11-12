@@ -1,0 +1,34 @@
+name: Build Euler-Liouville short PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'maths/analysis_euler_theorem/short/main.tex'
+      - '.github/workflows/build_euler_liouville_short.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Compile PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: maths/analysis_euler_theorem/short
+          args: -pdf -file-line-error -halt-on-error -interaction=nonstopmode
+      - name: Commit compiled PDF
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add maths/analysis_euler_theorem/short/main.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Compile Euler-Liouville short-note PDF"
+            git push origin HEAD:main
+          fi
