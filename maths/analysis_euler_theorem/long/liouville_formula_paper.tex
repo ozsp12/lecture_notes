@@ -90,8 +90,9 @@
 \title{From Abel's Identity to Liouville's Formula:\\
 Determinants, Volume Evolution, and Applications in Dynamical Systems and Physics}
 
-\author{Osvaldo L. Santos-Pereira\thanks{\href{mailto:olsp@if.ufrj.br}{olsp@if.ufrj.br}\quad\textbullet\quad
-\href{https://orcid.org/0000-0003-2231-517X}{ORCID: 0000-0003-2231-517X}}\\
+\author{Osvaldo L. Santos-Pereira\\[0.15em]
+\small\href{mailto:olsp@if.ufrj.br}{olsp@if.ufrj.br}\quad\textbullet\quad
+\href{https://orcid.org/0000-0003-2231-517X}{ORCID: 0000-0003-2231-517X}\\[0.15em]
 \small Physics Institute, Universidade Federal do Rio de Janeiro (UFRJ), Rio de Janeiro, Brazil}
 \date{}
 \setlength{\droptitle}{-2.2em}
@@ -118,66 +119,34 @@ Liouville's formula relates the determinant of a fundamental matrix of a linear 
 \addcontentsline{toc}{section}{Glossary of Terms and Symbols}
 \begingroup
 \footnotesize
-\renewcommand{\arraystretch}{1.0}
+\renewcommand{\arraystretch}{1.07}
 \setlength{\tabcolsep}{2pt}
-\noindent\begin{minipage}[t]{0.493\textwidth}
-\vspace{0pt}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}X@{}}
+\noindent\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}p{0.135\textwidth}X@{\hspace{14pt}}>{\raggedright\arraybackslash}p{0.135\textwidth}X@{}}
 \toprule
-\textbf{Entry} & \textbf{Definition} \\
+\textbf{Entry} & \textbf{Definition} & \textbf{Entry} & \textbf{Definition} \\
 \midrule
-$A(t)$ & Coefficient matrix of a linear system. \\
-$M_n(\R)$ & Real $n\times n$ matrices. \\
-$GL(n,\R)$ & Invertible real $n\times n$ matrices. \\
-$I_n$ & Identity matrix of order $n$. \\
-$U(t)$ & Fundamental matrix of $U'=AU$. \\
-$\Phi(t,\tau)$ & State-transition matrix. \\
-$\mathbf b(t)$ & External forcing in a linear system. \\
-$\det B$ & Determinant; oriented volume factor. \\
-$\tr B$ & Sum of the diagonal entries of $B$. \\
-$W(t)$ & Wronskian of scalar solutions. \\
-$\delta(t)$ & Determinant of normalized transport. \\
-$\nabla\cdot\mathbf f$ & Divergence of a vector field. \\
-$DF$ & Jacobian matrix of a differentiable map. \\
-$\varphi_{t,t_0}$ & Nonlinear flow map from $t_0$ to $t$. \\
-$X(t)$ & Variational matrix of the flow. \\
-$R,S$ & Orthogonal and positive polar factors. \\
-Abel & Wronskian evolution identity. \\
-Jacobi & Differential identity for a determinant. \\
-Liouville & Trace-controlled determinant evolution. \\
-ODE & Ordinary differential equation. \\
+$A(t)$ & Coefficient matrix of a linear system. & $\Vol(\Omega)$ & Lebesgue volume of a region. \\
+$M_n(\R)$ & Real $n\times n$ matrices. & $F$ & Deformation gradient of a material map. \\
+$GL(n,\R)$ & Invertible real $n\times n$ matrices. & $\mathcal J$ & Material Jacobian $\det F$. \\
+$I_n$ & Identity matrix of order $n$. & $L$ & Spatial velocity-gradient matrix. \\
+$U(t)$ & Fundamental matrix of $U'=AU$. & $J$ & Canonical symplectic matrix. \\
+$\Phi(t,\tau)$ & State-transition matrix. & $\mathcal H$ & Hamiltonian function. \\
+$\mathbf b(t)$ & External forcing in a linear system. & $K$ & Symmetric quadratic Hamiltonian matrix. \\
+$\det B$ & Determinant; oriented volume factor. & $\Theta$ & Expansion scalar of a congruence. \\
+$\tr B$ & Sum of the diagonal entries of $B$. & $\sigma_i$ & Singular values of the transition matrix. \\
+$W(t)$ & Wronskian of scalar solutions. & $\ell_i$ & Asymptotic singular-value growth rates. \\
+$\delta(t)$ & Determinant of normalized transport. & $\mu_j$ & Floquet multipliers of the monodromy. \\
+$\nabla\cdot\mathbf f$ & Divergence of a vector field. & $\nu_j$ & Floquet exponents: $\mu_j=\exp(T\nu_j)$. \\
+$DF$ & Jacobian matrix of a differentiable map. & $M$ & Monodromy matrix of a periodic system. \\
+$\varphi_{t,t_0}$ & Nonlinear flow map from $t_0$ to $t$. & $H(t)$ & Hubble parameter $a'/a$. \\
+$X(t)$ & Variational matrix of the flow. & $\boldsymbol\chi$ & Motion map of continuum mechanics. \\
+$R,S$ & Orthogonal and positive polar factors. & $a(t)$ & Cosmological scale factor. \\
+Abel & Wronskian evolution identity. & $k$ & FLRW spatial-curvature parameter. \\
+Jacobi & Differential identity for a determinant. & $h_{ij}$ & Induced spatial metric in FLRW. \\
+Liouville & Trace-controlled determinant evolution. & $V_{\rm phys}$ & Physical volume of a comoving region. \\
+ODE & Ordinary differential equation. & FLRW & Friedmann--Lema\^itre--Robertson--Walker. \\
 \bottomrule
 \end{tabularx}
-\end{minipage}\hfill
-\begin{minipage}[t]{0.493\textwidth}
-\vspace{0pt}
-\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{0.30\linewidth}>{\raggedright\arraybackslash}X@{}}
-\toprule
-\textbf{Entry} & \textbf{Definition} \\
-\midrule
-$\Vol(\Omega)$ & Lebesgue volume of a region. \\
-$F$ & Deformation gradient of a material map. \\
-$\mathcal J$ & Material Jacobian $\det F$. \\
-$L$ & Spatial velocity-gradient matrix. \\
-$J$ & Canonical symplectic matrix. \\
-$\mathcal H$ & Hamiltonian function. \\
-$K$ & Symmetric quadratic Hamiltonian matrix. \\
-$\Theta$ & Expansion scalar of a congruence. \\
-$\sigma_i$ & Singular values of the transition matrix. \\
-$\ell_i$ & Asymptotic singular-value growth rates. \\
-$\mu_j$ & Floquet multipliers of the monodromy. \\
-$\nu_j$ & Floquet exponents: $\mu_j=\exp(T\nu_j)$. \\
-$M$ & Monodromy matrix of a periodic system. \\
-$H(t)$ & Hubble parameter $a'/a$. \\
-$\boldsymbol\chi$ & Motion map of continuum mechanics. \\
-$a(t)$ & Cosmological scale factor. \\
-$k$ & FLRW spatial-curvature parameter. \\
-$h_{ij}$ & Induced spatial metric in FLRW. \\
-$V_{\rm phys}$ & Physical volume of a comoving region. \\
-FLRW & Friedmann--Lema\^itre--Robertson--Walker. \\
-\bottomrule
-\end{tabularx}
-\end{minipage}
 \endgroup
 \clearpage
 \begingroup
@@ -2140,93 +2109,6 @@ This separation explains both the reach and the limitation of the result. A zero
 
 Abel's identity supplies the scalar prototype, Jacobi's formula supplies the determinant derivative, and geometric transport supplies the interpretation. Together they identify the trace as an instantaneous logarithmic volume rate and the determinant of the fundamental or transition matrix as its accumulated finite-time effect.
 
-\appendix
-\section{Python Code for Reproducing the Figures}
-\label{app:python-code}
-
-This appendix reproduces, without omissions, the Python source used to generate Figs.~\ref{fig:volume-factors}, \ref{fig:oscillator-phase-space}, and \ref{fig:oscillator-area}. The program requires NumPy, SciPy, and Matplotlib, and writes the output images to the directory containing the script. The first routine plots the analytical volume factors for constant matrix trace, whereas the second integrates the damped oscillator using \texttt{scipy.integrate.solve\_ivp} with the tolerances specified in the source.
-
-The third routine applies \texttt{scipy.linalg.expm} to the vertices of a regular polygon and compares the ratio of transported polygonal areas with the determinant predicted by Liouville's formula. Because both areas refer to the same polygon, its discretisation of the unit disk cancels from the ratio. The comparison therefore checks the numerical evaluation of the state-transition matrix against its theoretical determinant rather than supplying an independent geometric proof.
-
-\begin{lstlisting}[style=paperpython,caption={Complete source of \texttt{liouville\_examples.py}.},label={lst:python-figures}]
-"""Reproduce the numerical figures for the Abel--Liouville pedagogical paper.
-
-Uses NumPy, SciPy and Matplotlib. All files are written beside this script.
-"""
-from pathlib import Path
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-from scipy.linalg import expm
-
-OUT = Path(__file__).resolve().parent
-
-def plot_volume_factors():
-    t = np.linspace(0, 3, 501)
-    fig, ax = plt.subplots(figsize=(6.4, 4.2))
-    for c in [1, 0, -1]:
-        ax.plot(t, np.exp(c*t), label=rf'$\operatorname{{tr}} A={c}$')
-    ax.set(xlabel='$t$', ylabel='$V(t)/V(0)$', title='Volume evolution from Liouville\'s formula')
-    ax.grid(alpha=.3);ax.legend();fig.tight_layout()
-    fig.savefig(OUT/'figures_volume_factors.png', dpi=300)
-    plt.close(fig)
-
-def plot_oscillator_phase_space():
-    t=np.linspace(0,30,3001)
-    fig,ax=plt.subplots(figsize=(6,5))
-    for g in [0.,.12]:
-        def rhs(t,y): return [y[1],-y[0]-2*g*y[1]]
-        sol=solve_ivp(rhs,(0,30),[1,0],t_eval=t,rtol=1e-11,atol=1e-13)
-        ax.plot(sol.y[0],sol.y[1],label=rf'$\gamma={g:g}$')
-    ax.set(xlabel='$x$',ylabel="$v=\\mathrm{d}x/\\mathrm{d}t$",title='Damped oscillator in phase space')
-    ax.grid(alpha=.3);ax.legend();fig.tight_layout()
-    fig.savefig(OUT/'figures_oscillator_phase_space.png',dpi=300)
-    plt.close(fig)
-
-def polygon_area(coords):
-    x,y=coords[0],coords[1]
-    return .5*abs(np.dot(x,np.roll(y,-1))-np.dot(y,np.roll(x,-1)))
-
-def plot_oscillator_area():
-    """Check expm against Liouville's area law with a fixed 720-gon.
-
-    The shoelace-area ratio of a polygon under a linear map is exactly
-    abs(det(map)); no circle-versus-polygon discretization error survives
-    this ratio. Residual differences reflect expm and floating-point error.
-    """
-    gamma=.12
-    A=np.array([[0.,1.],[-1.,-2*gamma]])
-    theta=np.linspace(0,2*np.pi,720,endpoint=False)
-    circle=np.vstack((np.cos(theta),np.sin(theta)))
-    unit_area=polygon_area(circle)
-    t_sample=np.linspace(0,10,16)
-    ratios=[]
-    for t in t_sample:
-        ell=expm(t*A)@circle
-        ratios.append(polygon_area(ell)/unit_area)
-    predicted=np.exp(-2*gamma*t_sample)
-    assert np.max(abs(np.array(ratios)-predicted))<5e-13
-    fig,(ax0,ax1)=plt.subplots(1,2,figsize=(10.5,4.1))
-    for t in [0.,4.,8.]:
-        ell=expm(t*A)@circle
-        ax0.plot(np.r_[ell[0],ell[0,0]],np.r_[ell[1],ell[1,0]],label=f'$t={t:g}$, $A/A_0={np.exp(-.24*t):.3f}$')
-    ax0.set(xlabel='$x$',ylabel='$v$',title='(a) Transported unit disk')
-    ax0.set_aspect('equal',adjustable='box');ax0.grid(alpha=.25);ax0.legend(fontsize=8)
-    t=np.linspace(0,10,500)
-    ax1.plot(t,np.exp(-2*gamma*t),label='Liouville $e^{-0.24t}$')
-    ax1.plot(t_sample,ratios,'o',markersize=3.3,label='720-gon area ratio (expm)')
-    ax1.set(xlabel='$t$',ylabel='$V(t)/V(0)$',title='(b) Consistency of expm and Liouville law')
-    ax1.grid(alpha=.25);ax1.legend(fontsize=8)
-    fig.tight_layout()
-    fig.savefig(OUT/'figures_oscillator_area.png',dpi=300)
-    plt.close(fig)
-
-if __name__=='__main__':
-    plot_volume_factors()
-    plot_oscillator_phase_space()
-    plot_oscillator_area()
-\end{lstlisting}
-
 \begingroup\small
 \begin{thebibliography}{99}
 
@@ -2357,5 +2239,93 @@ Princeton University Press, Princeton, 1993.
 
 \end{thebibliography}
 \endgroup
+
+\clearpage
+\appendix
+\section{Python Code for Reproducing the Figures}
+\label{app:python-code}
+
+This appendix reproduces, without omissions, the Python source used to generate Figs.~\ref{fig:volume-factors}, \ref{fig:oscillator-phase-space}, and \ref{fig:oscillator-area}. The program requires NumPy, SciPy, and Matplotlib, and writes the output images to the directory containing the script. The first routine plots the analytical volume factors for constant matrix trace, whereas the second integrates the damped oscillator using \texttt{scipy.integrate.solve\_ivp} with the tolerances specified in the source.
+
+The third routine applies \texttt{scipy.linalg.expm} to the vertices of a regular polygon and compares the ratio of transported polygonal areas with the determinant predicted by Liouville's formula. Because both areas refer to the same polygon, its discretisation of the unit disk cancels from the ratio. The comparison therefore checks the numerical evaluation of the state-transition matrix against its theoretical determinant rather than supplying an independent geometric proof.
+
+\begin{lstlisting}[style=paperpython,caption={Complete source of \texttt{liouville\_examples.py}.},label={lst:python-figures}]
+"""Reproduce the numerical figures for the Abel--Liouville pedagogical paper.
+
+Uses NumPy, SciPy and Matplotlib. All files are written beside this script.
+"""
+from pathlib import Path
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+from scipy.linalg import expm
+
+OUT = Path(__file__).resolve().parent
+
+def plot_volume_factors():
+    t = np.linspace(0, 3, 501)
+    fig, ax = plt.subplots(figsize=(6.4, 4.2))
+    for c in [1, 0, -1]:
+        ax.plot(t, np.exp(c*t), label=rf'$\operatorname{{tr}} A={c}$')
+    ax.set(xlabel='$t$', ylabel='$V(t)/V(0)$', title='Volume evolution from Liouville\'s formula')
+    ax.grid(alpha=.3);ax.legend();fig.tight_layout()
+    fig.savefig(OUT/'figures_volume_factors.png', dpi=300)
+    plt.close(fig)
+
+def plot_oscillator_phase_space():
+    t=np.linspace(0,30,3001)
+    fig,ax=plt.subplots(figsize=(6,5))
+    for g in [0.,.12]:
+        def rhs(t,y): return [y[1],-y[0]-2*g*y[1]]
+        sol=solve_ivp(rhs,(0,30),[1,0],t_eval=t,rtol=1e-11,atol=1e-13)
+        ax.plot(sol.y[0],sol.y[1],label=rf'$\gamma={g:g}$')
+    ax.set(xlabel='$x$',ylabel="$v=\\mathrm{d}x/\\mathrm{d}t$",title='Damped oscillator in phase space')
+    ax.grid(alpha=.3);ax.legend();fig.tight_layout()
+    fig.savefig(OUT/'figures_oscillator_phase_space.png',dpi=300)
+    plt.close(fig)
+
+def polygon_area(coords):
+    x,y=coords[0],coords[1]
+    return .5*abs(np.dot(x,np.roll(y,-1))-np.dot(y,np.roll(x,-1)))
+
+def plot_oscillator_area():
+    """Check expm against Liouville's area law with a fixed 720-gon.
+
+    The shoelace-area ratio of a polygon under a linear map is exactly
+    abs(det(map)); no circle-versus-polygon discretization error survives
+    this ratio. Residual differences reflect expm and floating-point error.
+    """
+    gamma=.12
+    A=np.array([[0.,1.],[-1.,-2*gamma]])
+    theta=np.linspace(0,2*np.pi,720,endpoint=False)
+    circle=np.vstack((np.cos(theta),np.sin(theta)))
+    unit_area=polygon_area(circle)
+    t_sample=np.linspace(0,10,16)
+    ratios=[]
+    for t in t_sample:
+        ell=expm(t*A)@circle
+        ratios.append(polygon_area(ell)/unit_area)
+    predicted=np.exp(-2*gamma*t_sample)
+    assert np.max(abs(np.array(ratios)-predicted))<5e-13
+    fig,(ax0,ax1)=plt.subplots(1,2,figsize=(10.5,4.1))
+    for t in [0.,4.,8.]:
+        ell=expm(t*A)@circle
+        ax0.plot(np.r_[ell[0],ell[0,0]],np.r_[ell[1],ell[1,0]],label=f'$t={t:g}$, $A/A_0={np.exp(-.24*t):.3f}$')
+    ax0.set(xlabel='$x$',ylabel='$v$',title='(a) Transported unit disk')
+    ax0.set_aspect('equal',adjustable='box');ax0.grid(alpha=.25);ax0.legend(fontsize=8)
+    t=np.linspace(0,10,500)
+    ax1.plot(t,np.exp(-2*gamma*t),label='Liouville $e^{-0.24t}$')
+    ax1.plot(t_sample,ratios,'o',markersize=3.3,label='720-gon area ratio (expm)')
+    ax1.set(xlabel='$t$',ylabel='$V(t)/V(0)$',title='(b) Consistency of expm and Liouville law')
+    ax1.grid(alpha=.25);ax1.legend(fontsize=8)
+    fig.tight_layout()
+    fig.savefig(OUT/'figures_oscillator_area.png',dpi=300)
+    plt.close(fig)
+
+if __name__=='__main__':
+    plot_volume_factors()
+    plot_oscillator_phase_space()
+    plot_oscillator_area()
+\end{lstlisting}
 
 \end{document}

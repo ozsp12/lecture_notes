@@ -1,6 +1,8 @@
-# From Abel's Identity to Liouville's Formula (version 10)
+# From Abel's Identity to Liouville's Formula (version 12)
 
-The full Python source for Figures 3, 4 and 5 is reproduced verbatim in Appendix A of the LaTeX article. The executable script is also included as `liouville_examples.py`.
+The author e-mail and ORCID are placed immediately beneath the name, and the complete glossary occupies a single, unbroken four-column table on page 1. The table of contents begins on page 2.
+
+The references appear before Appendix A. The full Python source for Figures 3, 4 and 5 is reproduced verbatim in Appendix A of the LaTeX article. The executable script is also included as `liouville_examples.py`.
 
 ## Contents
 
