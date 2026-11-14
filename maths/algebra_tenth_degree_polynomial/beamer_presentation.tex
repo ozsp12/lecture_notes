@@ -3,7 +3,8 @@
 % pedagogical slides give the elementary ansatz before the structural proof.
 % Compile twice with pdfLaTeX (MiKTeX default) or with XeLaTeX.
 % PdfLaTeX uses Type 1 Libertinus (if available) or Latin Modern;
-% XeLaTeX/LuaLaTeX use the original Libertinus OpenType fonts.
+% XeLaTeX/LuaLaTeX use Libertinus OpenType fonts when available;
+% otherwise they fall back to Latin Modern text and mathematics.
 \documentclass[11pt,aspectratio=169]{beamer}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -24,18 +25,30 @@
   \usepackage[utf8]{inputenc}
   % Keep the Libertinus typeface when installed; otherwise use Latin Modern.
   \IfFileExists{libertinus-type1.sty}{%
-    \usepackage{libertinus}%
+    \usepackage{libertinus-type1}%
   }{%
     \usepackage{lmodern}%
   }
 \else
   \usepackage{fontspec}
   \usepackage{unicode-math}
-  \setmainfont{LibertinusSerif-Regular.otf}[
-    BoldFont=LibertinusSerif-Bold.otf,
-    ItalicFont=LibertinusSerif-Italic.otf,
-    BoldItalicFont=LibertinusSerif-BoldItalic.otf]
-  \setmathfont{LibertinusMath-Regular.otf}
+  % Libertinus is optional. Fall back to the standard Latin Modern fonts.
+  \IfFontExistsTF{LibertinusSerif-Regular.otf}{%
+    \setmainfont{LibertinusSerif-Regular.otf}[
+      BoldFont=LibertinusSerif-Bold.otf,
+      ItalicFont=LibertinusSerif-Italic.otf,
+      BoldItalicFont=LibertinusSerif-BoldItalic.otf]
+  }{%
+    \setmainfont{lmroman10-regular.otf}[
+      BoldFont=lmroman10-bold.otf,
+      ItalicFont=lmroman10-italic.otf,
+      BoldItalicFont=lmroman10-bolditalic.otf]
+  }
+  \IfFontExistsTF{LibertinusMath-Regular.otf}{%
+    \setmathfont{LibertinusMath-Regular.otf}
+  }{%
+    \setmathfont{latinmodern-math.otf}
+  }
 \fi
 \usefonttheme{serif}
 \definecolor{ink}{RGB}{27,27,27}
@@ -156,10 +169,11 @@ We have already solved the problem by direct algebra. The remaining question is 
 % 5 — original structural explanation, justified paragraphs and number.
 \begin{frame}[t]{The structure of the exponents.}
 \tightbody
+\setlength{\parskip}{2pt}
 Every exponent of $P$ is uniquely $r+4s$, where $r,s\in\{0,1,2\}$:
 \vspace{-1mm}
 \begin{center}
-\renewcommand{\arraystretch}{1.18}
+\renewcommand{\arraystretch}{1.08}
 \begin{tabular}{c|ccc}
   & $r=0$ & $r=1$ & $r=2$\\\hline
  $s=0$ & $0$ & $1$ & $2$\\
@@ -361,6 +375,7 @@ Each factor has leading coefficient $1$: the coefficient multiplying its highest
 % 13 — careful introduction to cyclotomic polynomials.
 \begin{frame}[t]{Monic and cyclotomic polynomials.}
 \tightbody
+\fontsize{10.0}{11.8}\selectfont\setlength{\parskip}{2pt}
 Recall that a polynomial is \emph{monic} if its leading coefficient is $1$; for example, $x^2+x+1$ is monic, whereas $2x^2+x+1$ is not. An $n$-th root of unity is \emph{primitive} if its multiplicative order is exactly $n$, meaning that no smaller positive power equals $1$. The \emph{cyclotomic polynomial} $\Phi_n(x)$ is the monic polynomial whose zeros are precisely the primitive $n$-th roots of unity.
 
 For the orders appearing in this problem, these polynomials are
