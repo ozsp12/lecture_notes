@@ -35,6 +35,17 @@
 \usepackage{xcolor}
 \usepackage{fourier-orns}
 \usepackage{geometry}
+% Proporcoes convencionais de pagina A4, classe nativa article.
+% Inclui cabecalho e rodape no calculo das margens para evitar
+% o espaco inferior excessivo da configuracao-padrao da classe.
+\geometry{
+  a4paper,
+  left=22.5mm,
+  right=22.5mm,
+  top=18mm,
+  bottom=18mm,
+  includeheadfoot
+}
 \usepackage{parskip}
 \usepackage{listings}
 \usepackage{setspace}
@@ -62,7 +73,7 @@
 % ============================================================
 \setlength{\headheight}{15pt}
 \setlength{\headsep}{22pt}
-\setlength{\footskip}{28pt}
+\setlength{\footskip}{36pt}
 \fancypagestyle{articlelayout}{%
   \fancyhf{}%
   \fancyhead[L]{\footnotesize\nouppercase{\leftmark}}%
@@ -366,7 +377,7 @@ Este trabalho apresenta uma correspondência entre uma conhecida derivação geo
 
 \begingroup
 \footnotesize
-\renewcommand{\arraystretch}{1.02}
+\renewcommand{\arraystretch}{1.04}
 \setlength{\tabcolsep}{6pt}
 
 \begin{longtable}{@{}>{\raggedright\arraybackslash}p{0.24\textwidth}>{\raggedright\arraybackslash}p{0.72\textwidth}@{}}
@@ -376,48 +387,63 @@ Este trabalho apresenta uma correspondência entre uma conhecida derivação geo
 
 Aceleração centrípeta, $a_c$ &
 Aceleração normal instantânea dirigida para o interior, necessária ao movimento circular uniforme. Sua magnitude é deduzida na Seção 4 como $a_c=v^2/R$. \\
+\addlinespace[11pt]
 
 Potência de um ponto, $\Pot_{\lambda}(\pt{P})$ &
 Escalar com sinal associado a um ponto $\pt{P}$ e a uma circunferência $\lambda$ de centro $\pt{O}$ e raio $R$, definido por $\Pot_{\lambda}(\pt{P})=\seglen{PO}^{2}-R^2$. \\
+\addlinespace[11pt]
 
 Relação tangente--secante &
 Identidade euclidiana clássica entre produtos de segmentos segundo a qual, para um ponto exterior, o quadrado do comprimento da tangente é igual ao produto das duas distâncias determinadas pela secante. \\
+\addlinespace[11pt]
 
 Relação entre produtos de segmentos &
 Estrutura algébrica comum às configurações de cordas que se intersectam, duas secantes exteriores e tangente--secante. \\
+\addlinespace[11pt]
 
 Construção tangencial &
 Comparação geométrica entre a continuação tangencial inercial em $\pt{A}$ e a trajetória circular real. \\
+\addlinespace[11pt]
 
 Continuação tangencial inercial &
 O movimento retilíneo $\mathbf{r}_{\pt{A}}+\mathbf{v}_{\pt{A}}t$ que a partícula seguiria se a interação dirigida para o interior fosse removida em $\pt{A}$. \\
+\addlinespace[11pt]
 
 Referencial tangente--normal &
 Base ortonormal local formada pelo vetor tangente unitário $\mathbf{t}_{\pt{A}}$ e pelo vetor normal unitário dirigido para o interior $\mathbf{n}_{\pt{A}}$. \\
+\addlinespace[11pt]
 
 Aceleração normal, $a_n$ &
 Projeção da aceleração sobre a normal dirigida para o interior, $a_n=\mathbf{n}_{\pt{A}}\!\cdot\!\mathbf{a}_{\pt{A}}$. Para o movimento circular uniforme, $a_n=a_c$. \\
+\addlinespace[11pt]
 
 Desvio geométrico auxiliar, $h_g$ &
 Intervalo radial entre a extremidade tangencial $\pt{C}$ e a circunferência, medido ao longo da semirreta que passa por $\pt{O}$ e $\pt{C}$. \\
+\addlinespace[11pt]
 
 Desvio normal físico, $h_c$ &
 Separação normal entre o ponto orbital real e a continuação tangencial inercial em $\pt{A}$. \\
+\addlinespace[11pt]
 
 Parâmetro de tempo curto, $\tau$ &
 Grandeza adimensional $\tau=vt/R$, igual ao deslocamento angular físico $\theta$ no movimento circular uniforme. \\
+\addlinespace[11pt]
 
 Ângulo auxiliar, $\theta_g$ &
 Ângulo determinado pela construção tangencial, que satisfaz $\theta_g=\arctan\tau$. Difere do ângulo orbital físico no regime de $t$ finito. \\
+\addlinespace[11pt]
 
 Ângulo orbital físico, $\theta$ &
 Deslocamento angular da partícula ao longo da órbita circular, com $\theta=\tau=vt/R$. \\
+\addlinespace[11pt]
 
 Discrepância relativa, $\varepsilon(\tau)$ &
 Comparação adimensional entre os dois desvios, $\varepsilon=(h_g-h_c)/h_c$, utilizada para quantificar o erro, em tempo finito, da construção geométrica. \\
+\addlinespace[11pt]
 
 Limite local &
 Limite $t\to0$ (equivalentemente, $\tau\to0$) no qual os desvios auxiliar e físico possuem o mesmo coeficiente quadrático. \\
+\addlinespace[11pt]
 
 Segmento orientado &
 Segmento cujo sinal depende da orientação escolhida ao longo de uma secante; utilizado para expressar uniformemente a relação de potência com sinal. \\
@@ -684,7 +710,7 @@ O valor pedagógico do argumento reside em demonstrar a relação entre moviment
 
 
 
-\clearpage
+% Continuidade editorial: referencias e apendice sem quebra de pagina forcada.
 \appendix
 \setcounter{subsection}{0}
 \renewcommand{\thesubsection}{A.\arabic{subsection}}
@@ -701,7 +727,7 @@ As relações entre produtos de segmentos utilizadas neste artigo pertencem à g
 
 A Figura~\ref{steinerpop} resume as três configurações geométricas usuais. A primeira envolve duas cordas que se intersectam no interior da circunferência; a segunda envolve duas secantes traçadas a partir de um ponto exterior; a terceira é o caso limite tangente--secante. As demonstrações são incluídas apenas para tornar explícita e autocontida a correspondência mecânica utilizada posteriormente.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.82\textwidth]{steinerpop.png}
     \caption{Configurações clássicas de cordas que se intersectam, secantes a partir de um ponto exterior e tangente--secante.}
